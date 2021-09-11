@@ -6,7 +6,7 @@ import { IoHeartSharp, IoTime } from "react-icons/io5";
 import { SiOpenstreetmap } from "react-icons/si";
 import { AiTwotoneSound } from "react-icons/ai";
 import { IoIosCompass } from "react-icons/io";
-import { HiOutlineDotsHorizontal } from "react-icons/hi";
+import { HiOutlineDotsHorizontal, HiOutlineDotsVertical } from "react-icons/hi";
 
 import spotify1 from "../../../assets/Logos/spotify2.png";
 import spotify2 from "../../../assets/Logos/spotify.png";
@@ -61,7 +61,7 @@ const NavBar = () => {
         <IoHeartSharp />
         <AiTwotoneSound />
         <span />
-        <HiOutlineDotsHorizontal />
+        {isSize ? <HiOutlineDotsVertical /> : <HiOutlineDotsHorizontal />}
       </StNavBarSoundOptions>
     </StNavBarContainer>
   );
