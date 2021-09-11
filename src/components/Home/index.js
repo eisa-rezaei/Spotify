@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 import { RiCheckboxBlankCircleLine, RiPlayMiniFill } from "react-icons/ri";
 import Layout from "../Layout";
-import { musics, recent_artists } from "../../data/data";
+import { GENRES, musics, recent_artists } from "../../data/data";
 import user_image from "./../../assets/user-image/Eisa.png";
 import {
   StHomeContainer,
@@ -79,15 +79,9 @@ const Home = () => {
         </StHomeSwiperContainer>
         <h5>Genres :</h5>
         <StHomeGenres>
-          <span> Classic </span>
-          <span> Techno </span>
-          <span> House </span>
-          <span> Hip-hop </span>
-          <span> Chillout </span>
-          <span> Manimal </span>
-          <span> blues </span>
-          <span> Country </span>
-          <span> Electronic </span>
+          {GENRES.map((item, index) => (
+            <span key={index}>{item}</span>
+          ))}
         </StHomeGenres>
         <h5>Recent Artist</h5>
         <StHomeRecentArtists>

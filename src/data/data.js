@@ -98,3 +98,15 @@ export const recent_artists = [
     image: recent_artist6,
   },
 ];
+
+export const GENRES = [
+  "Classic",
+  "Techno",
+  "House",
+  "Hip-hop",
+  "Chillout",
+  "Manimal",
+  "Blues",
+  "Country",
+  "Electronic",
+];

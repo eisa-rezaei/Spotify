@@ -8,15 +8,16 @@ import { AiTwotoneSound } from "react-icons/ai";
 import { IoIosCompass } from "react-icons/io";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
+import spotify1 from "../../../assets/Logos/spotify2.png";
+import spotify2 from "../../../assets/Logos/spotify.png";
+
 import { Link } from "react-router-dom";
 import {
   StNavBarContainer,
   StNavBarLinks,
   StNavBarSingleLink,
   StNavBarSoundOptions,
-} from "./Styles";
-import spotify1 from "../../../assets/Logos/spotify2.png";
-import spotify2 from "../../../assets/Logos/spotify.png";
+} from "./styles";
 
 const NAVLINKS = [
   { icon: <FaHome />, title: "Home", linkSrc: "/" },
@@ -59,7 +60,7 @@ const NavBar = () => {
         hello
         <IoHeartSharp />
         <AiTwotoneSound />
-        <span></span>
+        <span />
         <HiOutlineDotsHorizontal />
       </StNavBarSoundOptions>
     </StNavBarContainer>

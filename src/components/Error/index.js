@@ -6,7 +6,7 @@ const Error = () => {
   return (
     <Layout>
       <StErrorContainer>
-        Some thing wrong with url please use navigation! -_-
+        Some thing wrong with URL, please use navigation! -_-
       </StErrorContainer>
     </Layout>
   );
