@@ -13,6 +13,14 @@ import recent_artist6 from "./../assets/recent-artists/4.jpg";
 import recent_artist2 from "./../assets/recent-artists/5.jpeg";
 import recent_artist1 from "./../assets/recent-artists/6.jpeg";
 
+import music1 from "./../musics/Adele_1.mp3";
+import music2 from "./../musics/Adele_2.mp3";
+import music3 from "./../musics/Alexander.mp3";
+import music4 from "./../musics/Ed.mp3";
+import music5 from "./../musics/Music.mp3";
+import music6 from "./../musics/VinJay_1.mp3";
+import music7 from "./../musics/VinJay_2.MP3";
+
 export const musics = [
   {
     id: 1,
@@ -21,6 +29,7 @@ export const musics = [
     musicName: "Some tea",
     artist: "jesus",
     bgColor: "#e0e0e0",
+    music_src: music1,
   },
   {
     id: 2,
@@ -29,6 +38,7 @@ export const musics = [
     musicName: "Some where",
     artist: "jesus_2",
     bgColor: "#7670f6",
+    music_src: music2,
   },
   {
     id: 3,
@@ -37,6 +47,7 @@ export const musics = [
     musicName: "Some thing",
     artist: "jesus_3",
     bgColor: "#fff",
+    music_src: music3,
   },
   {
     id: 4,
@@ -45,6 +56,7 @@ export const musics = [
     musicName: "Some body",
     artist: "Asghar",
     bgColor: "#e0e0e0",
+    music_src: music4,
   },
   {
     id: 5,
@@ -53,6 +65,7 @@ export const musics = [
     musicName: "Some time",
     artist: "Akbar",
     bgColor: "#2e4df4",
+    music_src: music5,
   },
   {
     id: 6,
@@ -61,6 +74,7 @@ export const musics = [
     musicName: "Some one",
     artist: "Mosa",
     bgColor: "#000",
+    music_src: music6,
   },
   {
     id: 7,
@@ -69,6 +83,7 @@ export const musics = [
     musicName: "Some How",
     artist: "Eisa",
     bgColor: "#cac1c2",
+    music_src: music7,
   },
 ];
 
