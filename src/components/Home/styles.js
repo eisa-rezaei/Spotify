@@ -132,6 +132,7 @@ export const StHomePlaySound = styled.div`
     background-color: #95d854;
     color: #fff;
     font-size: 1.2rem;
+    cursor: pointer;
   }
 `;
 export const StHomePlaySoundInfo = styled.div`

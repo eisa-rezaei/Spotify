@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { RiCheckboxBlankCircleLine, RiPlayMiniFill } from "react-icons/ri";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
-import { RiCheckboxBlankCircleLine, RiPlayMiniFill } from "react-icons/ri";
 import Layout from "../Layout";
 import { GENRES, musics, recent_artists } from "../../data/data";
 import user_image from "./../../assets/user-image/Eisa.png";
@@ -21,11 +21,13 @@ import {
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
+import { TiMediaPause } from "react-icons/ti";
 
 const Home = () => {
   SwiperCore.use(Autoplay);
   const [activeSlide, setActiveSlide] = useState(0);
   const [isSize, setIsSize] = useState(window.innerWidth < 700);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const checkSize = () => {
     setIsSize(window.innerWidth < 700);
@@ -63,8 +65,8 @@ const Home = () => {
                     ) : null}
                     <img src={image} alt={name} />
                     <StHomePlaySound isActive={activeSlide === index}>
-                      <span>
-                        <RiPlayMiniFill />
+                      <span onClick={() => setIsPlaying(!isPlaying)}>
+                        {isPlaying ? <TiMediaPause /> : <RiPlayMiniFill />}
                       </span>
                       <StHomePlaySoundInfo>
                         <p>{musicName}</p>

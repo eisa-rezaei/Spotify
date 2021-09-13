@@ -10,11 +10,14 @@ import { HiOutlineDotsHorizontal, HiOutlineDotsVertical } from "react-icons/hi";
 
 import spotify1 from "../../../assets/Logos/spotify2.png";
 import spotify2 from "../../../assets/Logos/spotify.png";
+import Signer from "./../../../assets/recent-artists/artist-icon.png";
 
 import { Link } from "react-router-dom";
 import {
   StNavBarContainer,
   StNavBarLinks,
+  StNavBarMusicSignerImage,
+  StNavBarMusicSignerImagePlay,
   StNavBarSingleLink,
   StNavBarSoundOptions,
 } from "./styles";
@@ -57,7 +60,20 @@ const NavBar = () => {
         ))}
       </StNavBarLinks>
       <StNavBarSoundOptions>
-        hello
+        <Link to="/nowplaying">
+          <StNavBarMusicSignerImage>
+            <img src={Signer} alt="artist" />
+            <StNavBarMusicSignerImagePlay>
+              <p />
+              <p />
+              <p />
+              <p />
+              <p />
+              <p />
+              <p />
+            </StNavBarMusicSignerImagePlay>
+          </StNavBarMusicSignerImage>
+        </Link>
         <IoHeartSharp />
         <AiTwotoneSound />
         <span />

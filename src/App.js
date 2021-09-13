@@ -1,6 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import Loading from "./components/Loading";
 const Error = lazy(() => import("./components/Error"));
+const NowPlaying = lazy(() => import("./components/NowPlaying"));
 const Home = lazy(() => import("./components/Home"));
 const Explore = lazy(() => import("./components/Explore"));
 const Igtv = lazy(() => import("./components/Igtv"));
@@ -9,7 +11,7 @@ const Time = lazy(() => import("./components/Time"));
 
 function App() {
   return (
-    <Suspense fallback={<h1>you know this is a loading right?</h1>}>
+    <Suspense fallback={<Loading></Loading>}>
       <Router>
         <Switch>
           <Route path="/" exact>
@@ -26,6 +28,9 @@ function App() {
           </Route>
           <Route path="/explore" exact>
             <Explore />
+          </Route>
+          <Route path="/nowplaying" exact>
+            <NowPlaying />
           </Route>
           <Route>
             <Error />
