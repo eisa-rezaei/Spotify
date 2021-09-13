@@ -21,13 +21,12 @@ import {
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-import { TiMediaPause } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   SwiperCore.use(Autoplay);
   const [activeSlide, setActiveSlide] = useState(0);
   const [isSize, setIsSize] = useState(window.innerWidth < 700);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   const checkSize = () => {
     setIsSize(window.innerWidth < 700);
@@ -57,17 +56,17 @@ const Home = () => {
             autoplay={{ delay: 2000 }}
           >
             {musics.map(
-              ({ name, id, image, bgColor, musicName, artist, tag }, index) => (
+              ({ name, id, image, musicName, artist, tag }, index) => (
                 <SwiperSlide key={id}>
-                  <StHomeSwiperSlide bgColor={bgColor}>
+                  <StHomeSwiperSlide>
                     {activeSlide === index ? (
                       <StHomeSwiperSlideTag>{tag}</StHomeSwiperSlideTag>
                     ) : null}
                     <img src={image} alt={name} />
                     <StHomePlaySound isActive={activeSlide === index}>
-                      <span onClick={() => setIsPlaying(!isPlaying)}>
-                        {isPlaying ? <TiMediaPause /> : <RiPlayMiniFill />}
-                      </span>
+                      <Link to={`/nowplaying/${index}`}>
+                        <RiPlayMiniFill />
+                      </Link>
                       <StHomePlaySoundInfo>
                         <p>{musicName}</p>
                         <p>{artist}</p>

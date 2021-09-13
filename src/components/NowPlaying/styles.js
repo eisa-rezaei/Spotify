@@ -30,17 +30,18 @@ export const StNowPlayingHeader = styled.header`
 `;
 export const StNowPlayingSigner = styled.article`
   width: 100%;
-  height: 50vh;
+  height: 70vh;
   padding: 10px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  overflow: hidden;
+  overflow: scroll;
   border-bottom: 2px solid #222;
   & img {
     width: 40%;
     height: 100%;
+    background-color: #e0e0e0;
   }
   @media (max-width: 700px) {
     height: 80vh;
@@ -61,7 +62,6 @@ export const StNowPlayingSignerInfo = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: scroll;
   & h5 {
     color: #a0a0a0;
   }

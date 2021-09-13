@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { RiArrowLeftSLine, RiPlayMiniFill } from "react-icons/ri";
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
 import { SiApplemusic } from "react-icons/si";
 import { TiArrowRepeat, TiArrowShuffle, TiMediaPause } from "react-icons/ti";
 
-import ArtistImage from "./../../assets/recent-artists/artist-icon.png";
 import Layout from "../Layout";
 import {
   StNowPlayingContainer,
@@ -17,14 +16,26 @@ import {
   StNowPlayingSignerInfo,
 } from "./styles";
 import { musics } from "../../data/data";
+import { useDispatch, useSelector } from "react-redux";
+import { setMusic } from "../../redux/playing/productActions";
+import selectros from "../../redux/playing/selectors";
 
 const NowPlaying = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const { id } = useParams();
+  const [currentMusicId, setCurrentMusicId] = useState(parseInt(id));
+  const currentMusic = useSelector(selectros.getMusic)[0];
+  const [isPlaying, setIsPlaying] = useState(true);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const dispatch = useDispatch();
 
   const audio = useRef();
   const History = useHistory();
+
+  useEffect(() => {
+    const selectedMusic = musics.filter((music) => music.id === currentMusicId);
+    dispatch(setMusic(selectedMusic[0]));
+  }, [currentMusicId, dispatch]);
 
   useEffect(() => {
     const time = Math.floor(audio.current.duration);
@@ -36,12 +47,18 @@ const NowPlaying = () => {
       const time = Math.floor(audio.current.currentTime);
       setCurrentTime(time);
     }, 500);
+    if (currentTime === duration) {
+      setCurrentMusicId(
+        currentMusicId >= musics.length ? 0 : currentMusicId + 1
+      );
+    }
     return () => clearInterval(interval);
-  }, []);
+  }, [currentMusicId, currentTime, duration]);
 
   const togglePlayMusic = () => {
-    setIsPlaying(!isPlaying);
-    if (!isPlaying) {
+    const prevValue = isPlaying;
+    setIsPlaying(!prevValue);
+    if (!prevValue) {
       audio.current.play();
     } else {
       audio.current.pause();
@@ -69,10 +86,10 @@ const NowPlaying = () => {
           <SiApplemusic />
         </StNowPlayingHeader>
         <StNowPlayingSigner>
-          <img src={ArtistImage} alt="hello" />
+          <img src={currentMusic?.image} alt="hello" />
           <StNowPlayingSignerInfo>
-            <h3>I will be Here</h3>
-            <h5>Tiesto</h5>
+            <h3>{currentMusic?.musicName}</h3>
+            <h5>{currentMusic?.artist}</h5>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
               fugiat vel doloribus animi, ratione corrupti nam culpa obcaecati
@@ -88,21 +105,37 @@ const NowPlaying = () => {
           </StNowPlayingSignerInfo>
         </StNowPlayingSigner>
         <StNowPlayingMusicContainer>
-          <audio ref={audio}>
-            <source src={musics[0].music_src} />
-          </audio>
+          <audio ref={audio} src={currentMusic?.music_src} autoPlay></audio>
           <StNowPlayingMusic>
             <TiArrowShuffle />
-            <MdSkipPrevious />
+            <MdSkipPrevious
+              onClick={() => {
+                setCurrentMusicId(
+                  currentMusicId <= 1 ? musics.length : currentMusicId - 1
+                );
+              }}
+            />
             <span onClick={togglePlayMusic}>
-              {isPlaying ? <TiMediaPause /> : <RiPlayMiniFill />}
+              {isPlaying || currentTime === duration ? (
+                <TiMediaPause />
+              ) : (
+                <RiPlayMiniFill />
+              )}
             </span>
-            <MdSkipNext />
+            <MdSkipNext
+              onClick={() => {
+                setCurrentMusicId(
+                  currentMusicId >= musics.length ? 0 : currentMusicId + 1
+                );
+              }}
+            />
             <TiArrowRepeat />
           </StNowPlayingMusic>
           <StNowPlayingMusicProgressBar>
             <p>
-              {duration && audio.current.duration && timeCalcolator(duration)}
+              {currentTime &&
+                audio.current.currentTime &&
+                timeCalcolator(currentTime)}
             </p>
             <input
               type="range"
@@ -112,9 +145,7 @@ const NowPlaying = () => {
               readOnly
             />
             <p>
-              {currentTime &&
-                audio.current.currentTime &&
-                timeCalcolator(currentTime)}
+              {duration && audio.current.duration && timeCalcolator(duration)}
             </p>
           </StNowPlayingMusicProgressBar>
         </StNowPlayingMusicContainer>

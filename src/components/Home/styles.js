@@ -82,7 +82,7 @@ export const StHomeSwiperSlide = styled.article`
   height: inherit;
   position: relative;
   border-radius: 10px;
-  background-color: ${(props) => props.bgColor};
+  background-color: #e0e0e0;
   & img {
     width: 100%;
     height: 100%;
@@ -122,7 +122,7 @@ export const StHomePlaySound = styled.div`
       ? `transform: translateY(0%);`
       : `transform: translateY(150%);`}
 
-  & span {
+  & a {
     width: 60px;
     height: 60px;
     display: flex;

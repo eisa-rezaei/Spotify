@@ -1,6 +1,9 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useRef } from "react";
+import { useSelector } from "react-redux";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Loading from "./components/Loading";
+import selectros from "./redux/playing/selectors";
+
 const Error = lazy(() => import("./components/Error"));
 const NowPlaying = lazy(() => import("./components/NowPlaying"));
 const Home = lazy(() => import("./components/Home"));
@@ -10,8 +13,10 @@ const Microphone = lazy(() => import("./components/Microphone"));
 const Time = lazy(() => import("./components/Time"));
 
 function App() {
+  const audio = useRef();
+  const currentMusic = useSelector(selectros.getMusic)[0];
   return (
-    <Suspense fallback={<Loading></Loading>}>
+    <Suspense fallback={<Loading />}>
       <Router>
         <Switch>
           <Route path="/" exact>
@@ -29,7 +34,7 @@ function App() {
           <Route path="/explore" exact>
             <Explore />
           </Route>
-          <Route path="/nowplaying" exact>
+          <Route path="/nowplaying/:id" exact>
             <NowPlaying />
           </Route>
           <Route>
@@ -37,6 +42,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      <audio ref={audio} src={currentMusic?.music_src} autoPlay></audio>
     </Suspense>
   );
 }

@@ -12,6 +12,7 @@ import recent_artist3 from "./../assets/recent-artists/3.jpg";
 import recent_artist6 from "./../assets/recent-artists/4.jpg";
 import recent_artist2 from "./../assets/recent-artists/5.jpeg";
 import recent_artist1 from "./../assets/recent-artists/6.jpeg";
+import Tiesto from "./../assets/recent-artists/artist-icon.png";
 
 import music1 from "./../musics/Adele_1.mp3";
 import music2 from "./../musics/Adele_2.mp3";
@@ -21,6 +22,24 @@ import music5 from "./../musics/Music.mp3";
 import music6 from "./../musics/VinJay_1.mp3";
 import music7 from "./../musics/VinJay_2.MP3";
 
+import music8 from "./../musics/Tiesto.mp3";
+import music9 from "./../musics/Teisto_2.mp3";
+import music10 from "./../musics/tiesto_1.mp3";
+import music11 from "./../musics/Tiesto-Escape.mp3";
+import music12 from "./../musics/Tiesto-IWillBeHere.mp3";
+import { FaHome, FaMicrophoneAlt } from "react-icons/fa";
+import { IoIosCompass } from "react-icons/io";
+import { SiOpenstreetmap } from "react-icons/si";
+import { IoTime } from "react-icons/io5";
+
+export const NAVLINKS = [
+  { icon: <FaHome />, title: "Home", linkSrc: "/" },
+  { icon: <IoIosCompass />, title: "Explore", linkSrc: "/explore" },
+  { icon: <SiOpenstreetmap />, title: "IGTV", linkSrc: "/igtv" },
+  { icon: <FaMicrophoneAlt />, title: "Microphone", linkSrc: "/microphone" },
+  { icon: <IoTime />, title: "Time", linkSrc: "/time" },
+];
+
 export const musics = [
   {
     id: 1,
@@ -28,7 +47,6 @@ export const musics = [
     tag: "house",
     musicName: "Some tea",
     artist: "jesus",
-    bgColor: "#e0e0e0",
     music_src: music1,
   },
   {
@@ -37,17 +55,15 @@ export const musics = [
     tag: "club house",
     musicName: "Some where",
     artist: "jesus_2",
-    bgColor: "#7670f6",
     music_src: music2,
   },
   {
     id: 3,
-    image: musicImage3,
-    tag: "house",
-    musicName: "Some thing",
-    artist: "jesus_3",
-    bgColor: "#fff",
-    music_src: music3,
+    image: Tiesto,
+    tag: "ELEC",
+    musicName: "Escape me",
+    artist: "Teisto",
+    music_src: music10,
   },
   {
     id: 4,
@@ -55,25 +71,22 @@ export const musics = [
     tag: "juzz",
     musicName: "Some body",
     artist: "Asghar",
-    bgColor: "#e0e0e0",
     music_src: music4,
   },
   {
     id: 5,
-    image: musicImage5,
-    tag: "pop",
-    musicName: "Some time",
-    artist: "Akbar",
-    bgColor: "#2e4df4",
-    music_src: music5,
+    image: Tiesto,
+    tag: "ELEC",
+    musicName: "I will be Here",
+    artist: "Teisto",
+    music_src: music12,
   },
   {
     id: 6,
     image: musicImage6,
     tag: "house",
     musicName: "Some one",
-    artist: "Mosa",
-    bgColor: "#000",
+    artist: "vin jay",
     music_src: music6,
   },
   {
@@ -82,8 +95,47 @@ export const musics = [
     tag: "Rock and Roll",
     musicName: "Some How",
     artist: "Eisa",
-    bgColor: "#cac1c2",
     music_src: music7,
+  },
+  {
+    id: 8,
+    image: Tiesto,
+    tag: "ELEC",
+    musicName: "stay Here",
+    artist: "Teisto",
+    music_src: music8,
+  },
+  {
+    id: 9,
+    image: Tiesto,
+    tag: "ELEC",
+    musicName: "I",
+    artist: "Teisto",
+    music_src: music9,
+  },
+  {
+    id: 10,
+    image: musicImage3,
+    tag: "house",
+    musicName: "Some thing",
+    artist: "jesus_3",
+    music_src: music3,
+  },
+  {
+    id: 11,
+    image: Tiesto,
+    tag: "ELEC",
+    musicName: "Techno",
+    artist: "Teisto",
+    music_src: music11,
+  },
+  {
+    id: 12,
+    image: musicImage5,
+    tag: "pop",
+    musicName: "Some time",
+    artist: "Akbar",
+    music_src: music5,
   },
 ];
 

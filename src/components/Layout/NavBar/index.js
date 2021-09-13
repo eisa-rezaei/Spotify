@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 
-import { FaHome, FaMicrophoneAlt } from "react-icons/fa";
-import { IoHeartSharp, IoTime } from "react-icons/io5";
-import { SiOpenstreetmap } from "react-icons/si";
+import { IoHeartSharp } from "react-icons/io5";
 import { AiTwotoneSound } from "react-icons/ai";
-import { IoIosCompass } from "react-icons/io";
 import { HiOutlineDotsHorizontal, HiOutlineDotsVertical } from "react-icons/hi";
 
 import spotify1 from "../../../assets/Logos/spotify2.png";
 import spotify2 from "../../../assets/Logos/spotify.png";
-import Signer from "./../../../assets/recent-artists/artist-icon.png";
 
 import { Link } from "react-router-dom";
 import {
@@ -21,19 +17,15 @@ import {
   StNavBarSingleLink,
   StNavBarSoundOptions,
 } from "./styles";
-
-const NAVLINKS = [
-  { icon: <FaHome />, title: "Home", linkSrc: "/" },
-  { icon: <IoIosCompass />, title: "Explore", linkSrc: "/explore" },
-  { icon: <SiOpenstreetmap />, title: "IGTV", linkSrc: "/igtv" },
-  { icon: <FaMicrophoneAlt />, title: "Microphone", linkSrc: "/microphone" },
-  { icon: <IoTime />, title: "Time", linkSrc: "/time" },
-];
+import { NAVLINKS } from "../../../data/data";
+import { useSelector } from "react-redux";
+import selectros from "../../../redux/playing/selectors";
 
 const NavBar = () => {
   const location = useLocation();
   const [isSize, setIsSize] = useState(window.innerWidth < 700);
 
+  const currentMusic = useSelector(selectros.getMusic)[0];
   const checkSize = () => {
     setIsSize(window.innerWidth < 700);
   };
@@ -60,9 +52,9 @@ const NavBar = () => {
         ))}
       </StNavBarLinks>
       <StNavBarSoundOptions>
-        <Link to="/nowplaying">
+        <Link to={`/nowplaying/${currentMusic.id - 1}`}>
           <StNavBarMusicSignerImage>
-            <img src={Signer} alt="artist" />
+            <img src={currentMusic?.image} alt="artist" />
             <StNavBarMusicSignerImagePlay>
               <p />
               <p />
