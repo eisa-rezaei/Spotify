@@ -37,6 +37,7 @@ const NowPlaying = () => {
     if (currentMusic.duration === currentMusic.currentTime) {
       setCurrentMusicId(currentMusicId + 1);
     }
+    // eslint-disable-next-line
   }, [currentMusic.duration, currentMusic.currentTime]);
 
   const isPlaying = currentMusic?.isPlaying;
