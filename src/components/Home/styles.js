@@ -122,7 +122,7 @@ export const StHomePlaySound = styled.div`
       ? `transform: translateY(0%);`
       : `transform: translateY(150%);`}
 
-  & a {
+  & span {
     width: 60px;
     height: 60px;
     display: flex;

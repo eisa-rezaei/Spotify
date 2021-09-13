@@ -1,7 +1,10 @@
-import React, { lazy, Suspense, useRef } from "react";
+import React, { lazy, Suspense, useRef, useEffect } from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Loading from "./components/Loading";
+import { setCurrentTime, setDuration } from "./redux/playing/productActions";
 import selectros from "./redux/playing/selectors";
 
 const Error = lazy(() => import("./components/Error"));
@@ -14,7 +17,29 @@ const Time = lazy(() => import("./components/Time"));
 
 function App() {
   const audio = useRef();
-  const currentMusic = useSelector(selectros.getMusic)[0];
+  const currentMusic = useSelector(selectros.getMusic);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const dispatch = useDispatch();
+
+  const time = audio?.current?.duration;
+  const currentTime = audio?.current?.currentTime;
+  useEffect(() => {
+    dispatch(setDuration(time));
+    const interval = setInterval(() => {
+      dispatch(setCurrentTime(currentTime));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [dispatch, time, currentTime]);
+
+  useEffect(() => {
+    setIsPlaying(currentMusic?.isPlaying);
+    if (isPlaying) {
+      audio?.current?.play();
+    } else {
+      audio?.current?.pause();
+    }
+  }, [isPlaying, currentMusic?.isPlaying]);
+
   return (
     <Suspense fallback={<Loading />}>
       <Router>

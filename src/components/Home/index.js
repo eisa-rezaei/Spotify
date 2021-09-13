@@ -22,11 +22,17 @@ import {
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { TiMediaPause } from "react-icons/ti";
+import selectros from "../../redux/playing/selectors";
+import { setIsPlaying } from "../../redux/playing/productActions";
 
 const Home = () => {
   SwiperCore.use(Autoplay);
   const [activeSlide, setActiveSlide] = useState(0);
   const [isSize, setIsSize] = useState(window.innerWidth < 700);
+  const currentMusic = useSelector(selectros.getMusic);
+  const dispatch = useDispatch();
 
   const checkSize = () => {
     setIsSize(window.innerWidth < 700);
@@ -62,11 +68,22 @@ const Home = () => {
                     {activeSlide === index ? (
                       <StHomeSwiperSlideTag>{tag}</StHomeSwiperSlideTag>
                     ) : null}
-                    <img src={image} alt={name} />
+                    <Link to={`/nowplaying/${index}`}>
+                      <img src={image} alt={name} />
+                    </Link>
+
                     <StHomePlaySound isActive={activeSlide === index}>
-                      <Link to={`/nowplaying/${index}`}>
-                        <RiPlayMiniFill />
-                      </Link>
+                      <span
+                        onClick={() =>
+                          dispatch(setIsPlaying(!currentMusic.isPlaying))
+                        }
+                      >
+                        {currentMusic.id === id && currentMusic.isPlaying ? (
+                          <TiMediaPause />
+                        ) : (
+                          <RiPlayMiniFill />
+                        )}
+                      </span>
                       <StHomePlaySoundInfo>
                         <p>{musicName}</p>
                         <p>{artist}</p>

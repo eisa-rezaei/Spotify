@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { RiArrowLeftSLine, RiPlayMiniFill } from "react-icons/ri";
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
@@ -17,52 +17,32 @@ import {
 } from "./styles";
 import { musics } from "../../data/data";
 import { useDispatch, useSelector } from "react-redux";
-import { setMusic } from "../../redux/playing/productActions";
+import { setIsPlaying, setMusic } from "../../redux/playing/productActions";
 import selectros from "../../redux/playing/selectors";
 
 const NowPlaying = () => {
   const { id } = useParams();
   const [currentMusicId, setCurrentMusicId] = useState(parseInt(id));
-  const currentMusic = useSelector(selectros.getMusic)[0];
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [duration, setDuration] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
+  const currentMusic = useSelector(selectros.getMusic);
   const dispatch = useDispatch();
-
-  const audio = useRef();
   const History = useHistory();
 
   useEffect(() => {
     const selectedMusic = musics.filter((music) => music.id === currentMusicId);
     dispatch(setMusic(selectedMusic[0]));
+    dispatch(setIsPlaying(true));
   }, [currentMusicId, dispatch]);
 
   useEffect(() => {
-    const time = Math.floor(audio.current.duration);
-    setDuration(time);
-  }, [audio?.current?.duration]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const time = Math.floor(audio.current.currentTime);
-      setCurrentTime(time);
-    }, 500);
-    if (currentTime === duration) {
-      setCurrentMusicId(
-        currentMusicId >= musics.length ? 0 : currentMusicId + 1
-      );
+    if (currentMusic.duration === currentMusic.currentTime) {
+      setCurrentMusicId(currentMusicId + 1);
     }
-    return () => clearInterval(interval);
-  }, [currentMusicId, currentTime, duration]);
+  }, [currentMusic.duration, currentMusic.currentTime]);
+
+  const isPlaying = currentMusic?.isPlaying;
 
   const togglePlayMusic = () => {
-    const prevValue = isPlaying;
-    setIsPlaying(!prevValue);
-    if (!prevValue) {
-      audio.current.play();
-    } else {
-      audio.current.pause();
-    }
+    dispatch(setIsPlaying(!isPlaying));
   };
 
   const timeCalcolator = (time) => {
@@ -105,7 +85,6 @@ const NowPlaying = () => {
           </StNowPlayingSignerInfo>
         </StNowPlayingSigner>
         <StNowPlayingMusicContainer>
-          <audio ref={audio} src={currentMusic?.music_src} autoPlay></audio>
           <StNowPlayingMusic>
             <TiArrowShuffle />
             <MdSkipPrevious
@@ -116,37 +95,27 @@ const NowPlaying = () => {
               }}
             />
             <span onClick={togglePlayMusic}>
-              {isPlaying || currentTime === duration ? (
-                <TiMediaPause />
-              ) : (
-                <RiPlayMiniFill />
-              )}
+              {isPlaying ? <TiMediaPause /> : <RiPlayMiniFill />}
             </span>
             <MdSkipNext
               onClick={() => {
                 setCurrentMusicId(
-                  currentMusicId >= musics.length ? 0 : currentMusicId + 1
+                  currentMusicId >= musics?.length - 1 ? 0 : currentMusicId + 1
                 );
               }}
             />
             <TiArrowRepeat />
           </StNowPlayingMusic>
           <StNowPlayingMusicProgressBar>
-            <p>
-              {currentTime &&
-                audio.current.currentTime &&
-                timeCalcolator(currentTime)}
-            </p>
+            <p>{timeCalcolator(currentMusic?.currentTime)}</p>
             <input
               type="range"
-              value={`${currentTime}`}
+              value={currentMusic?.currentTime}
               min="0"
-              max={`${duration}`}
+              max={currentMusic?.duration}
               readOnly
             />
-            <p>
-              {duration && audio.current.duration && timeCalcolator(duration)}
-            </p>
+            <p>{timeCalcolator(currentMusic?.duration)}</p>
           </StNowPlayingMusicProgressBar>
         </StNowPlayingMusicContainer>
       </StNowPlayingContainer>

@@ -25,7 +25,7 @@ const NavBar = () => {
   const location = useLocation();
   const [isSize, setIsSize] = useState(window.innerWidth < 700);
 
-  const currentMusic = useSelector(selectros.getMusic)[0];
+  const currentMusic = useSelector(selectros.getMusic);
   const checkSize = () => {
     setIsSize(window.innerWidth < 700);
   };
@@ -52,7 +52,7 @@ const NavBar = () => {
         ))}
       </StNavBarLinks>
       <StNavBarSoundOptions>
-        <Link to={`/nowplaying/${currentMusic.id - 1}`}>
+        <Link to={`/nowplaying/${currentMusic?.id}`}>
           <StNavBarMusicSignerImage>
             <img src={currentMusic?.image} alt="artist" />
             <StNavBarMusicSignerImagePlay>

@@ -42,6 +42,7 @@ export const StNowPlayingSigner = styled.article`
     width: 40%;
     height: 100%;
     background-color: #e0e0e0;
+    object-fit: cover;
   }
   @media (max-width: 700px) {
     height: 80vh;
