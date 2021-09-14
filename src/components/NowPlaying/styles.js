@@ -9,6 +9,10 @@ export const StNowPlayingContainer = styled.section`
   align-items: center;
   justify-content: flex-start;
   color: #fff;
+  margin-left: 25%;
+  @media (max-width: 700px) {
+    margin-left: 20%;
+  }
 `;
 
 export const StNowPlayingHeader = styled.header`
@@ -25,7 +29,8 @@ export const StNowPlayingHeader = styled.header`
     cursor: pointer;
   }
   @media (max-width: 700px) {
-    font-size: 1.4rem;
+    padding: 0 10px;
+    font-size: 1.2rem;
   }
 `;
 export const StNowPlayingSigner = styled.article`

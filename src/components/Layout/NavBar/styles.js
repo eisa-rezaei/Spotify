@@ -9,7 +9,7 @@ const heightChanger = keyframes`
 `;
 
 export const StNavBarContainer = styled.div`
-  width: 30%;
+  width: 25%;
   height: 100vh;
   padding-bottom: 15px;
   color: #fff;
@@ -21,8 +21,8 @@ export const StNavBarContainer = styled.div`
   border-right: 2px solid #333;
   z-index: 2;
   top: 0;
-  bottom: 0;
-  position: sticky;
+  left: 0;
+  position: fixed;
   @media (max-width: 700px) {
     width: 70px;
   }
@@ -65,7 +65,7 @@ export const StNavBarSingleLink = styled.li`
     margin: 0 20px;
   }
   @media (max-width: 700px) {
-    padding: 15px 0;
+    padding: 14px 0;
     & svg {
       width: 30px;
       height: 30px;

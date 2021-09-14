@@ -10,10 +10,12 @@ export const StHomeContainer = styled.section`
   justify-content: flex-start;
   overflow: hidden;
   color: #fff;
+  margin-left: 25%;
   & h5 {
     margin: 15px;
   }
   @media (max-width: 700px) {
+    margin-left: 20%;
     & h5 {
       font-size: 1.2rem;
       margin: 10px;

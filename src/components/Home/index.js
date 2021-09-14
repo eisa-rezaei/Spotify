@@ -54,8 +54,8 @@ const Home = () => {
         </StHomeHeader>
         <StHomeSwiperContainer>
           <Swiper
-            centeredSlides
             slidesPerView={isSize ? 1.3 : 3}
+            centeredSlides
             loop
             spaceBetween={20}
             onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}

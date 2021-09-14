@@ -11,4 +11,8 @@ export const StMicrophoneContainer = styled.section`
   justify-content: center;
   color: #fff;
   background-color: #000;
+  margin-left: 25%;
+  @media (max-width: 700px) {
+    margin-left: 20%;
+  }
 `;

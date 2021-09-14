@@ -10,4 +10,8 @@ export const StExploreContainer = styled.section`
   align-items: center;
   justify-content: center;
   color: #fff;
+  margin-left: 25%;
+  @media (max-width: 700px) {
+    margin-left: 20%;
+  }
 `;
