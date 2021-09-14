@@ -134,13 +134,31 @@ export const StHomePlaySound = styled.div`
     font-size: 1.2rem;
     cursor: pointer;
   }
+  @media (max-width: 700px) {
+    padding: 0 10px;
+    & span {
+      width: 100px;
+    }
+  }
 `;
 export const StHomePlaySoundInfo = styled.div`
+  width: 200px;
   margin-left: 40px;
   color: #fff;
   display: flex;
-  font-size: 1rem;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  & p {
+    font-size: 0.8rem;
+  }
+  @media (max-width: 700px) {
+    width: 100%;
+    align-items: flex-start;
+    margin-left: 20px;
+    font-size: 0.8rem;
+  }
 `;
 
 export const StHomeGenres = styled.div`
@@ -189,8 +207,8 @@ export const StHomeRecentArtists = styled.div`
 
   @media (max-width: 700px) {
     & img {
-      width: 45%;
-      height: 250px;
+      width: 44%;
+      height: 200px;
       object-fit: cover;
     }
   }

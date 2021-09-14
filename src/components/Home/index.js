@@ -55,7 +55,7 @@ const Home = () => {
         <StHomeSwiperContainer>
           <Swiper
             centeredSlides
-            slidesPerView={isSize ? 1.5 : 3}
+            slidesPerView={isSize ? 1.3 : 3}
             loop
             spaceBetween={20}
             onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
@@ -89,7 +89,7 @@ const Home = () => {
                       )}
                     </span>
                     <StHomePlaySoundInfo>
-                      <p>{music.musicName}</p>
+                      <h4>{music.musicName}</h4>
                       <p>{music.artist}</p>
                     </StHomePlaySoundInfo>
                   </StHomePlaySound>

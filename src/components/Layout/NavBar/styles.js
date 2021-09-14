@@ -17,6 +17,7 @@ export const StNavBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   border-right: 2px solid #333;
   z-index: 2;
   top: 0;
@@ -42,16 +43,16 @@ export const StNavBarLinks = styled.ul`
       align-items: center;
       justify-content: center;
       & img {
-        width: 50px;
-        height: 50px;
-        margin: 20px 0;
+        width: 40px;
+        height: 40px;
+        margin: 10px 0;
       }
     }
   }
 `;
 export const StNavBarSingleLink = styled.li`
   width: 100%;
-  padding: 25px 0;
+  padding: 20px 0;
   font-size: 1.1rem;
   display: flex;
   align-items: center;
@@ -64,7 +65,7 @@ export const StNavBarSingleLink = styled.li`
     margin: 0 20px;
   }
   @media (max-width: 700px) {
-    padding: 20px 0;
+    padding: 15px 0;
     & svg {
       width: 30px;
       height: 30px;
@@ -78,8 +79,9 @@ export const StNavBarSoundOptions = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+
   & input {
-    width: 60px;
+    width: 80px;
     height: 5px;
     border-radius: 2px;
     outline: none;
@@ -96,11 +98,13 @@ export const StNavBarSoundOptions = styled.div`
   }
 
   @media (max-width: 700px) {
-    min-height: 250px;
+    height: 220px;
     flex-direction: column-reverse;
     justify-content: space-between;
     & input {
       transform: rotate(-90deg);
+      height: 50px;
+      width: 70px;
     }
   }
 `;
