@@ -33,14 +33,15 @@ const NowPlaying = () => {
     dispatch(setIsPlaying(true));
   }, [currentMusicId, dispatch]);
 
-  useEffect(() => {
-    if (currentMusic.duration === currentMusic.currentTime) {
-      setCurrentMusicId(currentMusicId + 1);
-    }
-    // eslint-disable-next-line
-  }, [currentMusic.duration, currentMusic.currentTime]);
-
   const isPlaying = currentMusic?.isPlaying;
+
+  useEffect(() => {
+    if (currentMusic.isEnded) {
+      setCurrentMusicId(
+        currentMusicId >= musics?.length - 1 ? 0 : currentMusicId + 1
+      );
+    }
+  }, [currentMusic.isEnded, currentMusicId]);
 
   const togglePlayMusic = () => {
     dispatch(setIsPlaying(!isPlaying));
@@ -57,7 +58,6 @@ const NowPlaying = () => {
       return `${min}:${sec}`;
     }
   };
-
   return (
     <Layout>
       <StNowPlayingContainer>
@@ -71,18 +71,7 @@ const NowPlaying = () => {
           <StNowPlayingSignerInfo>
             <h3>{currentMusic?.musicName}</h3>
             <h5>{currentMusic?.artist}</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-              fugiat vel doloribus animi, ratione corrupti nam culpa obcaecati
-              debitis dolores accusamus labore, quas dolore illum odit veniam
-              voluptate. Sunt, iure. fugiat vel doloribus animi, ratione
-              corrupti nam culpa obcaecati debitis dolores accusamus labore,
-              quas dolore illum odit veniam voluptate. Sunt, iure. fugiat vel
-              doloribus animi, ratione corrupti nam culpa obcaecati debitis
-              dolores accusamus labore, quas dolore illum odit veniam voluptate.
-              Sunt, iure. fugiat vel doloribus animi, ratione corrupti nam culpa
-              obcaecati debitis.
-            </p>
+            <p>{currentMusic?.description}</p>
           </StNowPlayingSignerInfo>
         </StNowPlayingSigner>
         <StNowPlayingMusicContainer>
@@ -111,9 +100,9 @@ const NowPlaying = () => {
             <p>{timeCalcolator(currentMusic?.currentTime)}</p>
             <input
               type="range"
-              value={currentMusic?.currentTime}
+              value={`${currentMusic?.currentTime}`}
               min="0"
-              max={currentMusic?.duration}
+              max={`${currentMusic?.duration}`}
               readOnly
             />
             <p>{timeCalcolator(currentMusic?.duration)}</p>

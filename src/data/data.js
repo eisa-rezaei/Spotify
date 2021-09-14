@@ -48,6 +48,8 @@ export const musics = [
     musicName: "Some tea",
     artist: "jesus",
     music_src: music1,
+    description:
+      "Stop waiting for exceptional things to just happen.He found a leprechaun in his walnut shell.There can never be too many cherries on an ice cream sundae.They improved dramatically once the lead singer left.Honestly, I didn't care much for the first season, so I didn't bother with the second.Best friends are like old tomatoes and shoelaces.Despite what your teacher may have told you, there is a wrong way to wield a lasso.He had accidentally hacked into his company's server",
   },
   {
     id: 2,
@@ -56,6 +58,8 @@ export const musics = [
     musicName: "Some where",
     artist: "jesus_2",
     music_src: music2,
+    description:
+      "The beauty of the African sunset disguised the danger lurking nearby.She was too busy always talking about what she wanted to do to actually do any of it.People generally approve of dogs eating cat food but not cats eating dog food.The group quickly understood that toxic waste was the most effective barrier to use against the zombies.I want to buy a onesie… but know it won’t suit me.It's much more difficult to play tennis with a bowling ball than it is to bowl with a tennis ball.She wanted a pet platypus but ended up getting a duck and a ferret instead.",
   },
   {
     id: 3,
@@ -64,6 +68,8 @@ export const musics = [
     musicName: "Escape me",
     artist: "Teisto",
     music_src: music10,
+    description:
+      "The most exciting eureka moment 've had was when I realized that the instructions on food packets were just guidelines.Most shark attacks occur about 10 feet from the beach since that's where the people are.He wasn't bitter that she had moved on but from the radish.His ultimate dream fantasy consisted of being content and sleeping eight hours in a row.I would be delighted if the sea were full of cucumber juice.If I don’t like something, I’ll stay away from it.",
   },
   {
     id: 4,
@@ -72,6 +78,8 @@ export const musics = [
     musicName: "Some body",
     artist: "Asghar",
     music_src: music4,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facerefugiat vel doloribus animi, ratione corrupti nam culpa obcaecatidebitis dolores accusamus labore, quas dolore illum odit veniamvoluptate. Sunt, iure. fugiat vel doloribus animi, rationecorrupti nam culpa obcaecati debitis dolores accusamus labore,",
   },
   {
     id: 5,
@@ -80,6 +88,8 @@ export const musics = [
     musicName: "I will be Here",
     artist: "Teisto",
     music_src: music12,
+    description:
+      "corrupti nam culpa obcaecati debitis dolores accusamus labore,quas dolore illum odit veniam voluptate. Sunt, iure. fugiat veldoloribus animi, ratione corrupti nam culpa obcaecati debitisdolores accusamus labore, quas dolore illum odit veniam voluptate.Sunt, iure. fugiat vel doloribus animi, ratione corrupti nam culpaobcaecati debitis.",
   },
   {
     id: 6,
@@ -88,6 +98,8 @@ export const musics = [
     musicName: "Some one",
     artist: "vin jay",
     music_src: music6,
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam asperiores facere ea nihil alias non itaque, veniam fugit quod voluptatem? Assumenda, quibusdam? ",
   },
   {
     id: 7,
@@ -96,6 +108,8 @@ export const musics = [
     musicName: "Some How",
     artist: "Eisa",
     music_src: music7,
+    description:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ex cum! Ipsam, et? Sapiente provident eaque commodi sint ipsum eveniet.",
   },
   {
     id: 8,
@@ -104,6 +118,8 @@ export const musics = [
     musicName: "stay Here",
     artist: "Teisto",
     music_src: music8,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iste, aliquam magnam voluptatem cumque ratione eum eos impedit dolore minus?",
   },
   {
     id: 9,
@@ -112,6 +128,8 @@ export const musics = [
     musicName: "I",
     artist: "Teisto",
     music_src: music9,
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, iure maxime autem dolorem quia perferendis. Tempora natus laboriosam iusto a.",
   },
   {
     id: 10,
@@ -120,6 +138,8 @@ export const musics = [
     musicName: "Some thing",
     artist: "jesus_3",
     music_src: music3,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum dolores, animi numquam fugiat, corporis ratione inventore sed consequatur, labore perspiciatis voluptatum dolorum earum.",
   },
   {
     id: 11,
@@ -128,6 +148,8 @@ export const musics = [
     musicName: "Techno",
     artist: "Teisto",
     music_src: music11,
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam sunt soluta assumenda, exercitationem ipsa quam inventore sed nisi laborum saepe!",
   },
   {
     id: 12,
@@ -136,6 +158,8 @@ export const musics = [
     musicName: "Some time",
     artist: "Akbar",
     music_src: music5,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aperiam repudiandae rem dolore dignissimos inventore iure magnam deleniti culpa nemo?",
   },
 ];
 

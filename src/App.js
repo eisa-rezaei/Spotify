@@ -4,7 +4,11 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Loading from "./components/Loading";
-import { setCurrentTime, setDuration } from "./redux/playing/productActions";
+import {
+  setCurrentTime,
+  setDuration,
+  setIsEnded,
+} from "./redux/playing/productActions";
 import selectros from "./redux/playing/selectors";
 
 const Error = lazy(() => import("./components/Error"));
@@ -23,6 +27,9 @@ function App() {
 
   const time = audio?.current?.duration;
   const currentTime = audio?.current?.currentTime;
+  const isEnded = audio?.current?.ended;
+  const volume = currentMusic?.volume / 10;
+
   useEffect(() => {
     dispatch(setDuration(time));
     const interval = setInterval(() => {
@@ -39,6 +46,14 @@ function App() {
       audio?.current?.pause();
     }
   }, [isPlaying, currentMusic?.isPlaying]);
+
+  useEffect(() => {
+    dispatch(setIsEnded(isEnded));
+  }, [dispatch, isEnded]);
+
+  useEffect(() => {
+    audio.current.volume = volume ? volume : 1;
+  }, [volume, isPlaying]);
 
   return (
     <Suspense fallback={<Loading />}>
@@ -67,7 +82,12 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      <audio ref={audio} src={currentMusic?.music_src} autoPlay></audio>
+      <audio
+        ref={audio}
+        src={currentMusic?.music_src}
+        autoPlay
+        id="audio"
+      ></audio>
     </Suspense>
   );
 }

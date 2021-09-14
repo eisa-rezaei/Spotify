@@ -78,18 +78,29 @@ export const StNavBarSoundOptions = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  & span {
-    min-width: 60px;
+  & input {
+    width: 60px;
     height: 5px;
-    background-color: #fff;
     border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    ::-webkit-slider-thumb {
+      max-width: 0;
+      max-height: 0;
+      visibility: hidden;
+    }
   }
+
+  & svg {
+    cursor: pointer;
+  }
+
   @media (max-width: 700px) {
     min-height: 250px;
     flex-direction: column-reverse;
     justify-content: space-between;
-    & span {
-      transform: rotate(90deg);
+    & input {
+      transform: rotate(-90deg);
     }
   }
 `;

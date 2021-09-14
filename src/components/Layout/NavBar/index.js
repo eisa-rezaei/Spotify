@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router";
 
 import { IoHeartSharp } from "react-icons/io5";
@@ -20,18 +20,35 @@ import {
 import { NAVLINKS } from "../../../data/data";
 import { useSelector } from "react-redux";
 import selectros from "../../../redux/playing/selectors";
+import { useDispatch } from "react-redux";
+import { setVolume } from "../../../redux/playing/productActions";
 
 const NavBar = () => {
   const location = useLocation();
   const [isSize, setIsSize] = useState(window.innerWidth < 700);
+  const volumeRef = useRef();
+  const dispatch = useDispatch();
+  const volume = volumeRef?.current?.value;
 
-  const currentMusic = useSelector(selectros.getMusic);
   const checkSize = () => {
     setIsSize(window.innerWidth < 700);
   };
   useEffect(() => {
     window.addEventListener("resize", checkSize);
   }, []);
+  const currentMusic = useSelector(selectros.getMusic);
+
+  const volumeChangeHandler = () => {
+    dispatch(setVolume(volume));
+  };
+
+  const volumeOffHandler = () => {
+    if (volume > 5) {
+      dispatch(setVolume(0));
+    } else {
+      dispatch(setVolume(10));
+    }
+  };
 
   return (
     <StNavBarContainer>
@@ -67,8 +84,15 @@ const NavBar = () => {
           </StNavBarMusicSignerImage>
         </Link>
         <IoHeartSharp />
-        <AiTwotoneSound />
-        <span />
+        <AiTwotoneSound onClick={volumeOffHandler} />
+        <input
+          type="range"
+          min="0"
+          max="10"
+          readOnly
+          onChange={volumeChangeHandler}
+          ref={volumeRef}
+        />
         {isSize ? <HiOutlineDotsVertical /> : <HiOutlineDotsHorizontal />}
       </StNavBarSoundOptions>
     </StNavBarContainer>

@@ -121,5 +121,9 @@ export const StNowPlayingMusicProgressBar = styled.div`
   & input {
     width: 65%;
     outline: none;
+    background: transparent;
+    ::-webkit-slider-thumb {
+      visibility: hidden;
+    }
   }
 `;

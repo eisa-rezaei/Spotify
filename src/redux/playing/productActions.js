@@ -33,3 +33,15 @@ export const setIsPlaying = (products) => {
     payload: products, //products that we are passing in
   };
 };
+export const setIsEnded = (products) => {
+  return {
+    type: ActionTypes.SET_IS_ENDED, //type of action
+    payload: products, //products that we are passing in
+  };
+};
+export const setVolume = (products) => {
+  return {
+    type: ActionTypes.SET_VOLUME, //type of action
+    payload: products, //products that we are passing in
+  };
+};

@@ -25,7 +25,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { TiMediaPause } from "react-icons/ti";
 import selectros from "../../redux/playing/selectors";
-import { setIsPlaying } from "../../redux/playing/productActions";
+import { setIsPlaying, setMusic } from "../../redux/playing/productActions";
 
 const Home = () => {
   SwiperCore.use(Autoplay);
@@ -61,38 +61,41 @@ const Home = () => {
             onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
             autoplay={{ delay: 2000 }}
           >
-            {musics.map(
-              ({ name, id, image, musicName, artist, tag }, index) => (
-                <SwiperSlide key={id}>
-                  <StHomeSwiperSlide>
-                    {activeSlide === index ? (
-                      <StHomeSwiperSlideTag>{tag}</StHomeSwiperSlideTag>
-                    ) : null}
-                    <Link to={`/nowplaying/${index}`}>
-                      <img src={image} alt={name} />
-                    </Link>
-
-                    <StHomePlaySound isActive={activeSlide === index}>
-                      <span
-                        onClick={() =>
-                          dispatch(setIsPlaying(!currentMusic.isPlaying))
+            {musics.map((music, index) => (
+              <SwiperSlide key={music.id}>
+                <StHomeSwiperSlide>
+                  {activeSlide === index ? (
+                    <StHomeSwiperSlideTag>{music.tag}</StHomeSwiperSlideTag>
+                  ) : null}
+                  <Link to={`/nowplaying/${music.id}`}>
+                    <img src={music.image} alt={music.name} />
+                  </Link>
+                  <StHomePlaySound isActive={activeSlide === index}>
+                    <span
+                      onClick={() => {
+                        if (currentMusic.id === music.id) {
+                          dispatch(setIsPlaying(!currentMusic.isPlaying));
+                        } else {
+                          dispatch(setMusic(music));
+                          dispatch(setIsPlaying(true));
                         }
-                      >
-                        {currentMusic.id === id && currentMusic.isPlaying ? (
-                          <TiMediaPause />
-                        ) : (
-                          <RiPlayMiniFill />
-                        )}
-                      </span>
-                      <StHomePlaySoundInfo>
-                        <p>{musicName}</p>
-                        <p>{artist}</p>
-                      </StHomePlaySoundInfo>
-                    </StHomePlaySound>
-                  </StHomeSwiperSlide>
-                </SwiperSlide>
-              )
-            )}
+                      }}
+                    >
+                      {currentMusic.id === music.id &&
+                      currentMusic.isPlaying ? (
+                        <TiMediaPause />
+                      ) : (
+                        <RiPlayMiniFill />
+                      )}
+                    </span>
+                    <StHomePlaySoundInfo>
+                      <p>{music.musicName}</p>
+                      <p>{music.artist}</p>
+                    </StHomePlaySoundInfo>
+                  </StHomePlaySound>
+                </StHomeSwiperSlide>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </StHomeSwiperContainer>
         <h5>Genres :</h5>

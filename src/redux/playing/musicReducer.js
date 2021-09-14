@@ -30,6 +30,16 @@ export const musicReducer = (state = musicInitialState, { type, payload }) => {
         ...state,
         currentMusic: { ...state.currentMusic, isPlaying: payload },
       };
+    case ActionTypes.SET_IS_ENDED:
+      return {
+        ...state,
+        currentMusic: { ...state.currentMusic, isEnded: payload },
+      };
+    case ActionTypes.SET_VOLUME:
+      return {
+        ...state,
+        currentMusic: { ...state.currentMusic, volume: payload },
+      };
     default:
       return state;
   }
