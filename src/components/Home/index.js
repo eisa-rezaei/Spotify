@@ -21,13 +21,18 @@ import {
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { TiMediaPause } from "react-icons/ti";
+import selectros from "../../redux/playing/selectors";
+import { setIsPlaying, setMusic } from "../../redux/playing/productActions";
 
 const Home = () => {
   SwiperCore.use(Autoplay);
   const [activeSlide, setActiveSlide] = useState(0);
   const [isSize, setIsSize] = useState(window.innerWidth < 700);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const currentMusic = useSelector(selectros.getMusic);
+  const dispatch = useDispatch();
 
   const checkSize = () => {
     setIsSize(window.innerWidth < 700);
@@ -49,34 +54,48 @@ const Home = () => {
         </StHomeHeader>
         <StHomeSwiperContainer>
           <Swiper
+            slidesPerView={isSize ? 1.3 : 3}
             centeredSlides
-            slidesPerView={isSize ? 1.5 : 3}
             loop
             spaceBetween={20}
             onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
             autoplay={{ delay: 2000 }}
           >
-            {musics.map(
-              ({ name, id, image, bgColor, musicName, artist, tag }, index) => (
-                <SwiperSlide key={id}>
-                  <StHomeSwiperSlide bgColor={bgColor}>
-                    {activeSlide === index ? (
-                      <StHomeSwiperSlideTag>{tag}</StHomeSwiperSlideTag>
-                    ) : null}
-                    <img src={image} alt={name} />
-                    <StHomePlaySound isActive={activeSlide === index}>
-                      <span onClick={() => setIsPlaying(!isPlaying)}>
-                        {isPlaying ? <TiMediaPause /> : <RiPlayMiniFill />}
-                      </span>
-                      <StHomePlaySoundInfo>
-                        <p>{musicName}</p>
-                        <p>{artist}</p>
-                      </StHomePlaySoundInfo>
-                    </StHomePlaySound>
-                  </StHomeSwiperSlide>
-                </SwiperSlide>
-              )
-            )}
+            {musics.map((music, index) => (
+              <SwiperSlide key={music.id}>
+                <StHomeSwiperSlide>
+                  {activeSlide === index ? (
+                    <StHomeSwiperSlideTag>{music.tag}</StHomeSwiperSlideTag>
+                  ) : null}
+                  <Link to={`/nowplaying/${music.id}`}>
+                    <img src={music.image} alt={music.name} />
+                  </Link>
+                  <StHomePlaySound isActive={activeSlide === index}>
+                    <span
+                      onClick={() => {
+                        if (currentMusic.id === music.id) {
+                          dispatch(setIsPlaying(!currentMusic.isPlaying));
+                        } else {
+                          dispatch(setMusic(music));
+                          dispatch(setIsPlaying(true));
+                        }
+                      }}
+                    >
+                      {currentMusic.id === music.id &&
+                      currentMusic.isPlaying ? (
+                        <TiMediaPause />
+                      ) : (
+                        <RiPlayMiniFill />
+                      )}
+                    </span>
+                    <StHomePlaySoundInfo>
+                      <h4>{music.musicName}</h4>
+                      <p>{music.artist}</p>
+                    </StHomePlaySoundInfo>
+                  </StHomePlaySound>
+                </StHomeSwiperSlide>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </StHomeSwiperContainer>
         <h5>Genres :</h5>

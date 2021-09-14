@@ -9,7 +9,7 @@ const heightChanger = keyframes`
 `;
 
 export const StNavBarContainer = styled.div`
-  width: 30%;
+  width: 25%;
   height: 100vh;
   padding-bottom: 15px;
   color: #fff;
@@ -17,11 +17,12 @@ export const StNavBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   border-right: 2px solid #333;
   z-index: 2;
   top: 0;
-  bottom: 0;
-  position: sticky;
+  left: 0;
+  position: fixed;
   @media (max-width: 700px) {
     width: 70px;
   }
@@ -42,16 +43,16 @@ export const StNavBarLinks = styled.ul`
       align-items: center;
       justify-content: center;
       & img {
-        width: 50px;
-        height: 50px;
-        margin: 20px 0;
+        width: 40px;
+        height: 40px;
+        margin: 10px 0;
       }
     }
   }
 `;
 export const StNavBarSingleLink = styled.li`
   width: 100%;
-  padding: 25px 0;
+  padding: 20px 0;
   font-size: 1.1rem;
   display: flex;
   align-items: center;
@@ -64,7 +65,7 @@ export const StNavBarSingleLink = styled.li`
     margin: 0 20px;
   }
   @media (max-width: 700px) {
-    padding: 20px 0;
+    padding: 14px 0;
     & svg {
       width: 30px;
       height: 30px;
@@ -78,18 +79,32 @@ export const StNavBarSoundOptions = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  & span {
-    min-width: 60px;
+
+  & input {
+    width: 80px;
     height: 5px;
-    background-color: #fff;
     border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    ::-webkit-slider-thumb {
+      max-width: 0;
+      max-height: 0;
+      visibility: hidden;
+    }
   }
+
+  & svg {
+    cursor: pointer;
+  }
+
   @media (max-width: 700px) {
-    min-height: 250px;
+    height: 220px;
     flex-direction: column-reverse;
     justify-content: space-between;
-    & span {
-      transform: rotate(90deg);
+    & input {
+      transform: rotate(-90deg);
+      height: 50px;
+      width: 70px;
     }
   }
 `;

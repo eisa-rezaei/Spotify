@@ -9,6 +9,10 @@ export const StNowPlayingContainer = styled.section`
   align-items: center;
   justify-content: flex-start;
   color: #fff;
+  margin-left: 25%;
+  @media (max-width: 700px) {
+    margin-left: 20%;
+  }
 `;
 
 export const StNowPlayingHeader = styled.header`
@@ -25,22 +29,25 @@ export const StNowPlayingHeader = styled.header`
     cursor: pointer;
   }
   @media (max-width: 700px) {
-    font-size: 1.4rem;
+    padding: 0 10px;
+    font-size: 1.2rem;
   }
 `;
 export const StNowPlayingSigner = styled.article`
   width: 100%;
-  height: 50vh;
+  height: 70vh;
   padding: 10px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  overflow: hidden;
+  overflow: scroll;
   border-bottom: 2px solid #222;
   & img {
     width: 40%;
     height: 100%;
+    background-color: #e0e0e0;
+    object-fit: cover;
   }
   @media (max-width: 700px) {
     height: 80vh;
@@ -61,7 +68,6 @@ export const StNowPlayingSignerInfo = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: scroll;
   & h5 {
     color: #a0a0a0;
   }
@@ -120,5 +126,9 @@ export const StNowPlayingMusicProgressBar = styled.div`
   & input {
     width: 65%;
     outline: none;
+    background: transparent;
+    ::-webkit-slider-thumb {
+      visibility: hidden;
+    }
   }
 `;

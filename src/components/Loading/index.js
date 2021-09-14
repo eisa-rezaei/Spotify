@@ -5,7 +5,7 @@ const Loading = () => {
   return (
     <StLoadingLayoutContainer>
       <StLoadingContainer>
-        <span></span>
+        <span />
       </StLoadingContainer>
     </StLoadingLayoutContainer>
   );
