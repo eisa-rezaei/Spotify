@@ -5,7 +5,11 @@ import { StTimeContainer } from "./styles";
 const Time = () => {
   return (
     <Layout>
-      <StTimeContainer>Time</StTimeContainer>
+      <StTimeContainer>
+        This is Demo version
+        <br />
+        Time
+      </StTimeContainer>
     </Layout>
   );
 };

@@ -5,7 +5,11 @@ import { StMicrophoneContainer } from "./styles";
 const Microphone = () => {
   return (
     <Layout>
-      <StMicrophoneContainer>Microphone</StMicrophoneContainer>
+      <StMicrophoneContainer>
+        This is Demo version
+        <br />
+        Microphone
+      </StMicrophoneContainer>
     </Layout>
   );
 };

@@ -5,7 +5,11 @@ import { StIgtvContainer } from "./styles";
 const Igtv = () => {
   return (
     <Layout>
-      <StIgtvContainer>Igtv</StIgtvContainer>
+      <StIgtvContainer>
+        This is Demo version
+        <br />
+        Igtv
+      </StIgtvContainer>
     </Layout>
   );
 };

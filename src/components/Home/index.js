@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 import Layout from "../Layout";
 import { GENRES, musics, recent_artists } from "../../data/data";
-import user_image from "./../../assets/user-image/Eisa.png";
+import user_image from "./../../assets/user-image/avatar10.png";
 import {
   StHomeContainer,
   StHomeGenres,
@@ -26,6 +26,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TiMediaPause } from "react-icons/ti";
 import selectros from "../../redux/playing/selectors";
 import { setIsPlaying, setMusic } from "../../redux/playing/productActions";
+import Gener from "./components/Gener";
 
 const Home = () => {
   SwiperCore.use(Autoplay);
@@ -101,13 +102,15 @@ const Home = () => {
         <h5>Genres :</h5>
         <StHomeGenres>
           {GENRES.map((item, index) => (
-            <span key={index}>{item}</span>
+            <Gener key={index} item={item} />
           ))}
         </StHomeGenres>
         <h5>Recent Artist</h5>
         <StHomeRecentArtists>
           {recent_artists.map(({ image }, index) => (
-            <img src={image} alt="artist" key={index} />
+            <Link key={index} to="/demo">
+              <img src={image} alt="artist" />
+            </Link>
           ))}
         </StHomeRecentArtists>
       </StHomeContainer>

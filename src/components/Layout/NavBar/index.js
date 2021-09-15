@@ -72,7 +72,7 @@ const NavBar = () => {
         <Link to={`/nowplaying/${currentMusic?.id}`}>
           <StNavBarMusicSignerImage>
             <img src={currentMusic?.image} alt="artist" />
-            <StNavBarMusicSignerImagePlay>
+            <StNavBarMusicSignerImagePlay isPlaying={currentMusic?.isPlaying}>
               <p />
               <p />
               <p />

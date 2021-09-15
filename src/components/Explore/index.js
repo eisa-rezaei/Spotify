@@ -5,7 +5,10 @@ import { StExploreContainer } from "./styles";
 const Explore = () => {
   return (
     <Layout>
-      <StExploreContainer>Explore</StExploreContainer>
+      <StExploreContainer>
+        This is Demo version
+        <br /> ExplorePage
+      </StExploreContainer>
     </Layout>
   );
 };

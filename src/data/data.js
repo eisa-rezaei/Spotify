@@ -1,8 +1,7 @@
 import musicImage1 from "./../assets/music-pic/1.png";
 import musicImage2 from "./../assets/music-pic/2.png";
-import musicImage3 from "./../assets/music-pic/3.jpg";
+import musicImage3 from "./../assets/music-pic/3.jpeg";
 import musicImage4 from "./../assets/music-pic/4.png";
-import musicImage5 from "./../assets/music-pic/5.jpg";
 import musicImage6 from "./../assets/music-pic/6.jpeg";
 import musicImage7 from "./../assets/music-pic/7.png";
 
@@ -43,20 +42,20 @@ export const NAVLINKS = [
 export const musics = [
   {
     id: 1,
-    image: musicImage1,
+    image: musicImage6,
     tag: "house",
-    musicName: "Some tea",
-    artist: "jesus",
+    musicName: "Milion years ago",
+    artist: "Adel",
     music_src: music1,
     description:
       "Stop waiting for exceptional things to just happen.He found a leprechaun in his walnut shell.There can never be too many cherries on an ice cream sundae.They improved dramatically once the lead singer left.Honestly, I didn't care much for the first season, so I didn't bother with the second.Best friends are like old tomatoes and shoelaces.Despite what your teacher may have told you, there is a wrong way to wield a lasso.He had accidentally hacked into his company's server",
   },
   {
     id: 2,
-    image: musicImage2,
-    tag: "club house",
-    musicName: "Some where",
-    artist: "jesus_2",
+    image: musicImage6,
+    tag: "pop",
+    musicName: "Remedy",
+    artist: "Adel",
     music_src: music2,
     description:
       "The beauty of the African sunset disguised the danger lurking nearby.She was too busy always talking about what she wanted to do to actually do any of it.People generally approve of dogs eating cat food but not cats eating dog food.The group quickly understood that toxic waste was the most effective barrier to use against the zombies.I want to buy a onesie… but know it won’t suit me.It's much more difficult to play tennis with a bowling ball than it is to bowl with a tennis ball.She wanted a pet platypus but ended up getting a duck and a ferret instead.",
@@ -75,8 +74,8 @@ export const musics = [
     id: 4,
     image: musicImage4,
     tag: "juzz",
-    musicName: "Some body",
-    artist: "Asghar",
+    musicName: "Founded Love",
+    artist: "Ed sheeran",
     music_src: music4,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facerefugiat vel doloribus animi, ratione corrupti nam culpa obcaecatidebitis dolores accusamus labore, quas dolore illum odit veniamvoluptate. Sunt, iure. fugiat vel doloribus animi, rationecorrupti nam culpa obcaecati debitis dolores accusamus labore,",
@@ -93,9 +92,9 @@ export const musics = [
   },
   {
     id: 6,
-    image: musicImage6,
+    image: musicImage2,
     tag: "house",
-    musicName: "Some one",
+    musicName: "On Repeat",
     artist: "vin jay",
     music_src: music6,
     description:
@@ -104,9 +103,9 @@ export const musics = [
   {
     id: 7,
     image: musicImage7,
-    tag: "Rock and Roll",
-    musicName: "Some How",
-    artist: "Eisa",
+    tag: "Rap",
+    musicName: "Out of my mind",
+    artist: "vin jay",
     music_src: music7,
     description:
       " Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ex cum! Ipsam, et? Sapiente provident eaque commodi sint ipsum eveniet.",
@@ -125,7 +124,7 @@ export const musics = [
     id: 9,
     image: Tiesto,
     tag: "ELEC",
-    musicName: "I",
+    musicName: "Techno",
     artist: "Teisto",
     music_src: music9,
     description:
@@ -135,8 +134,8 @@ export const musics = [
     id: 10,
     image: musicImage3,
     tag: "house",
-    musicName: "Some thing",
-    artist: "jesus_3",
+    musicName: "Fairytale",
+    artist: "Alexander Reybak ",
     music_src: music3,
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum dolores, animi numquam fugiat, corporis ratione inventore sed consequatur, labore perspiciatis voluptatum dolorum earum.",
@@ -153,10 +152,10 @@ export const musics = [
   },
   {
     id: 12,
-    image: musicImage5,
+    image: musicImage1,
     tag: "pop",
-    musicName: "Some time",
-    artist: "Akbar",
+    musicName: "Another Love",
+    artist: "Tom odell",
     music_src: music5,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aperiam repudiandae rem dolore dignissimos inventore iure magnam deleniti culpa nemo?",

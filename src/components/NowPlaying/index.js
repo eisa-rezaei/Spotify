@@ -34,14 +34,13 @@ const NowPlaying = () => {
   }, [currentMusicId, dispatch]);
 
   const isPlaying = currentMusic?.isPlaying;
+  const isEnded = currentMusic?.isEnded;
 
   useEffect(() => {
-    if (currentMusic.isEnded) {
-      setCurrentMusicId(
-        currentMusicId >= musics?.length - 1 ? 0 : currentMusicId + 1
-      );
+    if (isEnded) {
+      setCurrentMusicId((prev) => (prev >= musics?.length - 1 ? 0 : prev + 1));
     }
-  }, [currentMusic.isEnded, currentMusicId]);
+  }, [isEnded]);
 
   const togglePlayMusic = () => {
     dispatch(setIsPlaying(!isPlaying));
@@ -76,7 +75,9 @@ const NowPlaying = () => {
         </StNowPlayingSigner>
         <StNowPlayingMusicContainer>
           <StNowPlayingMusic>
-            <TiArrowShuffle />
+            <span>
+              <TiArrowShuffle />
+            </span>
             <MdSkipPrevious
               onClick={() => {
                 setCurrentMusicId(
@@ -84,9 +85,9 @@ const NowPlaying = () => {
                 );
               }}
             />
-            <span onClick={togglePlayMusic}>
+            <button onClick={togglePlayMusic}>
               {isPlaying ? <TiMediaPause /> : <RiPlayMiniFill />}
-            </span>
+            </button>
             <MdSkipNext
               onClick={() => {
                 setCurrentMusicId(
@@ -94,7 +95,9 @@ const NowPlaying = () => {
                 );
               }}
             />
-            <TiArrowRepeat />
+            <span>
+              <TiArrowRepeat />
+            </span>
           </StNowPlayingMusic>
           <StNowPlayingMusicProgressBar>
             <p>{timeCalcolator(currentMusic?.currentTime)}</p>
