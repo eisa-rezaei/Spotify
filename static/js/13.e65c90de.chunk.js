@@ -1,2 +1,0 @@
-(this.webpackJsonpspotify=this.webpackJsonpspotify||[]).push([[13],{63:function(t,a,n){"use strict";n.d(a,"a",(function(){return r})),n.d(a,"b",(function(){return c}));var i=n(52);function r(t){return Object(i.a)({tag:"svg",attr:{viewBox:"0 0 24 24"},child:[{tag:"path",attr:{d:"M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"}}]})(t)}function c(t){return Object(i.a)({tag:"svg",attr:{viewBox:"0 0 24 24"},child:[{tag:"path",attr:{d:"M6 6h2v12H6zm3.5 6l8.5 6V6z"}}]})(t)}}}]);
-//# sourceMappingURL=13.e65c90de.chunk.js.map
