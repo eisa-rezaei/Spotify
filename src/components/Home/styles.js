@@ -166,7 +166,7 @@ export const StHomePlaySoundInfo = styled.div`
 export const StHomeGenres = styled.div`
   width: 100%;
   height: auto;
-  margin: 20px 0;
+  margin: 20px 10px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -174,17 +174,8 @@ export const StHomeGenres = styled.div`
   justify-content: space-around;
   color: #fff;
   font-size: 1rem;
-  & span {
-    min-width: 100px;
-    padding: 10px;
-    text-align: center;
-    border-radius: 15px;
-    border: 1px solid #fff;
-    transition: all 0.15s linear;
-    :hover {
-      background-color: #ffffff30;
-      cursor: pointer;
-    }
+  @media (max-width: 700px) {
+    justify-content: flex-start;
   }
 `;
 
@@ -199,19 +190,27 @@ export const StHomeRecentArtists = styled.div`
   flex-wrap: wrap;
   justify-items: center;
   align-content: center;
-  & img {
+  & a {
     width: 32%;
     height: 400px;
-    object-fit: cover;
-    margin: 5px;
+    padding: 5px;
     border-radius: 10px;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   @media (max-width: 700px) {
-    & img {
+    & a {
       width: 44%;
       height: 200px;
-      object-fit: cover;
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 `;

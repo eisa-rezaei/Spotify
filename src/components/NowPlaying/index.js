@@ -34,14 +34,13 @@ const NowPlaying = () => {
   }, [currentMusicId, dispatch]);
 
   const isPlaying = currentMusic?.isPlaying;
+  const isEnded = currentMusic?.isEnded;
 
   useEffect(() => {
-    if (currentMusic.isEnded) {
-      setCurrentMusicId(
-        currentMusicId >= musics?.length - 1 ? 0 : currentMusicId + 1
-      );
+    if (isEnded) {
+      setCurrentMusicId((prev) => (prev >= musics?.length - 1 ? 0 : prev + 1));
     }
-  }, [currentMusic.isEnded, currentMusicId]);
+  }, [isEnded]);
 
   const togglePlayMusic = () => {
     dispatch(setIsPlaying(!isPlaying));

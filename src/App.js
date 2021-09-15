@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import DemoPage from "./components/DemoPage";
 import Loading from "./components/Loading";
 import {
   setCurrentTime,
@@ -76,6 +77,9 @@ function App() {
           </Route>
           <Route path="/nowplaying/:id" exact>
             <NowPlaying />
+          </Route>
+          <Route path="/demo" exact>
+            <DemoPage />
           </Route>
           <Route>
             <Error />

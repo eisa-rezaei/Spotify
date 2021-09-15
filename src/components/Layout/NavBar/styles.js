@@ -32,12 +32,15 @@ export const StNavBarLinks = styled.ul`
   height: auto;
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
   & img {
     width: 100%;
     height: 100%;
+    margin-bottom: 15px;
   }
+
   @media (max-width: 700px) {
+    align-items: center;
     & a {
       display: flex;
       align-items: center;
@@ -45,7 +48,7 @@ export const StNavBarLinks = styled.ul`
       & img {
         width: 40px;
         height: 40px;
-        margin: 10px 0;
+        margin: 20px 0;
       }
     }
   }
@@ -114,6 +117,8 @@ export const StNavBarMusicSignerImage = styled.div`
   position: relative;
   border-radius: 10px;
   overflow: hidden;
+  background-color: #e0e0e0;
+
   & img {
     width: 100%;
     height: 100%;
@@ -130,31 +135,31 @@ export const StNavBarMusicSignerImagePlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
   & p {
     width: 3.1%;
     background-color: #fff;
     margin: 2px;
+    display: ${(props) => (props.isPlaying ? `block` : `none`)};
   }
   & p:nth-child(1) {
-    animation: ${heightChanger} 1.5s linear infinite 0.2s;
+    animation: ${heightChanger} 1.2s linear infinite 0.8s;
   }
   & p:nth-child(2) {
-    animation: ${heightChanger} 1.5s linear infinite 0.4s;
+    animation: ${heightChanger} 1.4s linear infinite 0.6s;
   }
   & p:nth-child(3) {
-    animation: ${heightChanger} 1.5s linear infinite 0.6s;
+    animation: ${heightChanger} 1.4s linear infinite 0.4s;
   }
   & p:nth-child(4) {
-    animation: ${heightChanger} 1.5s linear infinite 0.8s;
+    animation: ${heightChanger} 1.2s linear infinite 0.2s;
   }
   & p:nth-child(5) {
-    animation: ${heightChanger} 1.5s linear infinite 1s;
+    animation: ${heightChanger} 1.4s linear infinite 0.4s;
   }
   & p:nth-child(6) {
-    animation: ${heightChanger} 1.5s linear infinite 1.2s;
+    animation: ${heightChanger} 1.2s linear infinite 0.6s;
   }
   & p:nth-child(7) {
-    animation: ${heightChanger} 1.5s linear infinite 1.4s;
+    animation: ${heightChanger} 1.2s linear infinite 0.8s;
   }
 `;

@@ -41,7 +41,7 @@ export const StNowPlayingSigner = styled.article`
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  overflow: scroll;
+  overflow: auto;
   border-bottom: 2px solid #222;
   & img {
     width: 40%;

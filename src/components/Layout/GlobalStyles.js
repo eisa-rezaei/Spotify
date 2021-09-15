@@ -28,11 +28,11 @@ li {
 `;
 
 export const StLayoutContainer = styled.main`
-  min-width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: #000;
+  overflow: hidden;
 `;
