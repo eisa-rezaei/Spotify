@@ -100,9 +100,10 @@ export const StNowPlayingMusic = styled.div`
   align-items: center;
   justify-content: space-evenly;
   font-size: 1.5rem;
-  & span {
+  & button {
     width: 70px;
     height: 70px;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,7 +115,14 @@ export const StNowPlayingMusic = styled.div`
   & svg {
     cursor: pointer;
   }
+  & span {
+    color: #a0a0a0;
+    & svg {
+      cursor: not-allowed;
+    }
+  }
 `;
+
 export const StNowPlayingMusicProgressBar = styled.div`
   width: 100%;
   height: auto;

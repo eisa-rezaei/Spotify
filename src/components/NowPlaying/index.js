@@ -75,7 +75,9 @@ const NowPlaying = () => {
         </StNowPlayingSigner>
         <StNowPlayingMusicContainer>
           <StNowPlayingMusic>
-            <TiArrowShuffle />
+            <span>
+              <TiArrowShuffle />
+            </span>
             <MdSkipPrevious
               onClick={() => {
                 setCurrentMusicId(
@@ -83,9 +85,9 @@ const NowPlaying = () => {
                 );
               }}
             />
-            <span onClick={togglePlayMusic}>
+            <button onClick={togglePlayMusic}>
               {isPlaying ? <TiMediaPause /> : <RiPlayMiniFill />}
-            </span>
+            </button>
             <MdSkipNext
               onClick={() => {
                 setCurrentMusicId(
@@ -93,7 +95,9 @@ const NowPlaying = () => {
                 );
               }}
             />
-            <TiArrowRepeat />
+            <span>
+              <TiArrowRepeat />
+            </span>
           </StNowPlayingMusic>
           <StNowPlayingMusicProgressBar>
             <p>{timeCalcolator(currentMusic?.currentTime)}</p>

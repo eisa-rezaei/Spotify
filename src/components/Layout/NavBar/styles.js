@@ -33,12 +33,19 @@ export const StNavBarLinks = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  & img {
+  & a {
     width: 100%;
-    height: 100%;
-    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & img {
+      width: 90%;
+      height: 80%;
+      margin: 15px 0;
+      object-fit: fill;
+      justify-self: center;
+    }
   }
-
   @media (max-width: 700px) {
     align-items: center;
     & a {
