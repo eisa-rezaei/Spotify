@@ -15,11 +15,6 @@ export const musicReducer = (state = musicInitialState, { type, payload }) => {
           (item) => item.id !== payload.id
         ),
       };
-    case ActionTypes.SET_DURATION:
-      return {
-        ...state,
-        currentMusic: { ...state.currentMusic, duration: payload },
-      };
     case ActionTypes.SET_CURRENT_TIME:
       return {
         ...state,

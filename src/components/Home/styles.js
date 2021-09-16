@@ -1,4 +1,8 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const rotate = keyframes`
+to{transform: rotate(360deg);}
+`;
 
 export const StHomeContainer = styled.section`
   width: 100vw;
@@ -26,6 +30,7 @@ export const StHomeHeader = styled.header`
   width: 100%;
   height: 10vh;
   padding: 0 20px;
+  position: relative;
   color: #fff;
   border-bottom: 2px solid #333;
   display: flex;
@@ -45,6 +50,37 @@ export const StHomeHeader = styled.header`
     }
   }
 `;
+export const StUserInfoCard = styled.div`
+  width: 220px;
+  height: 150px;
+  top: 80px;
+  right: 0;
+  z-index: 2;
+  padding: 10px;
+  position: absolute;
+  background-color: #000;
+  transition: all 0.4s linear;
+  transform: ${(props) =>
+    props.isUserInfoCardOpen ? `scale3d(1 , 1 ,1);` : `scale3d(0.8 , 0 ,0.3);`};
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 0.8rem;
+  & svg {
+    color: orange;
+  }
+  & span {
+    width: 50px;
+    height: 50px;
+    border: 2px solid gray;
+    background-color: #000;
+    border-top-color: #a0a0a0;
+    align-self: center;
+    animation: ${rotate} 0.5s linear infinite;
+  }
+`;
+
 export const StHomeSearch = styled.div`
   width: 40%;
   height: auto;
@@ -125,8 +161,8 @@ export const StHomePlaySound = styled.div`
       : `transform: translateY(150%);`}
 
   & span {
-    width: 60px;
-    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,7 +175,7 @@ export const StHomePlaySound = styled.div`
   @media (max-width: 700px) {
     padding: 0 10px;
     & span {
-      width: 100px;
+      width: 80px;
     }
   }
 `;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { RiArrowLeftSLine, RiPlayMiniFill } from "react-icons/ri";
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
 import { SiApplemusic } from "react-icons/si";
@@ -63,7 +63,9 @@ const NowPlaying = () => {
         <StNowPlayingHeader>
           <RiArrowLeftSLine onClick={History.goBack} />
           NowPlaying
-          <SiApplemusic />
+          <Link to={`/album/${currentMusic?.id}`}>
+            <SiApplemusic />
+          </Link>
         </StNowPlayingHeader>
         <StNowPlayingSigner>
           <img src={currentMusic?.image} alt="hello" />
