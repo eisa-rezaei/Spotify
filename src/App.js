@@ -3,13 +3,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import Album from "./components/Album";
 import DemoPage from "./components/DemoPage";
 import Loading from "./components/Loading";
-import {
-  setCurrentTime,
-  setDuration,
-  setIsEnded,
-} from "./redux/playing/productActions";
+import { setCurrentTime, setIsEnded } from "./redux/playing/productActions";
 import selectros from "./redux/playing/selectors";
 
 const Error = lazy(() => import("./components/Error"));
@@ -26,18 +23,16 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(true);
   const dispatch = useDispatch();
 
-  const time = audio?.current?.duration;
   const currentTime = audio?.current?.currentTime;
   const isEnded = audio?.current?.ended;
   const volume = currentMusic?.volume / 10;
 
   useEffect(() => {
-    dispatch(setDuration(time));
     const interval = setInterval(() => {
       dispatch(setCurrentTime(currentTime));
     }, 1000);
     return () => clearInterval(interval);
-  }, [dispatch, time, currentTime]);
+  }, [dispatch, currentTime]);
 
   useEffect(() => {
     setIsPlaying(currentMusic?.isPlaying);
@@ -80,6 +75,9 @@ function App() {
           </Route>
           <Route path="/demo" exact>
             <DemoPage />
+          </Route>
+          <Route path="/album/:id" exact>
+            <Album />
           </Route>
           <Route>
             <Error />

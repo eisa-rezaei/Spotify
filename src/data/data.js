@@ -47,6 +47,7 @@ export const musics = [
     musicName: "Milion years ago",
     artist: "Adel",
     music_src: music1,
+    duration: 227.1,
     description:
       "Stop waiting for exceptional things to just happen.He found a leprechaun in his walnut shell.There can never be too many cherries on an ice cream sundae.They improved dramatically once the lead singer left.Honestly, I didn't care much for the first season, so I didn't bother with the second.Best friends are like old tomatoes and shoelaces.Despite what your teacher may have told you, there is a wrong way to wield a lasso.He had accidentally hacked into his company's server",
   },
@@ -57,6 +58,7 @@ export const musics = [
     musicName: "Remedy",
     artist: "Adel",
     music_src: music2,
+    duration: 245.47,
     description:
       "The beauty of the African sunset disguised the danger lurking nearby.She was too busy always talking about what she wanted to do to actually do any of it.People generally approve of dogs eating cat food but not cats eating dog food.The group quickly understood that toxic waste was the most effective barrier to use against the zombies.I want to buy a onesie… but know it won’t suit me.It's much more difficult to play tennis with a bowling ball than it is to bowl with a tennis ball.She wanted a pet platypus but ended up getting a duck and a ferret instead.",
   },
@@ -67,6 +69,7 @@ export const musics = [
     musicName: "Escape me",
     artist: "Teisto",
     music_src: music10,
+    duration: 480.57,
     description:
       "The most exciting eureka moment 've had was when I realized that the instructions on food packets were just guidelines.Most shark attacks occur about 10 feet from the beach since that's where the people are.He wasn't bitter that she had moved on but from the radish.His ultimate dream fantasy consisted of being content and sleeping eight hours in a row.I would be delighted if the sea were full of cucumber juice.If I don’t like something, I’ll stay away from it.",
   },
@@ -77,6 +80,7 @@ export const musics = [
     musicName: "Founded Love",
     artist: "Ed sheeran",
     music_src: music4,
+    duration: 279.9,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facerefugiat vel doloribus animi, ratione corrupti nam culpa obcaecatidebitis dolores accusamus labore, quas dolore illum odit veniamvoluptate. Sunt, iure. fugiat vel doloribus animi, rationecorrupti nam culpa obcaecati debitis dolores accusamus labore,",
   },
@@ -87,6 +91,7 @@ export const musics = [
     musicName: "I will be Here",
     artist: "Teisto",
     music_src: music12,
+    duration: 205.29,
     description:
       "corrupti nam culpa obcaecati debitis dolores accusamus labore,quas dolore illum odit veniam voluptate. Sunt, iure. fugiat veldoloribus animi, ratione corrupti nam culpa obcaecati debitisdolores accusamus labore, quas dolore illum odit veniam voluptate.Sunt, iure. fugiat vel doloribus animi, ratione corrupti nam culpaobcaecati debitis.",
   },
@@ -97,6 +102,7 @@ export const musics = [
     musicName: "On Repeat",
     artist: "vin jay",
     music_src: music6,
+    duration: 194.82,
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam asperiores facere ea nihil alias non itaque, veniam fugit quod voluptatem? Assumenda, quibusdam? ",
   },
@@ -107,6 +113,7 @@ export const musics = [
     musicName: "Out of my mind",
     artist: "vin jay",
     music_src: music7,
+    duration: 217.128,
     description:
       " Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ex cum! Ipsam, et? Sapiente provident eaque commodi sint ipsum eveniet.",
   },
@@ -117,6 +124,7 @@ export const musics = [
     musicName: "stay Here",
     artist: "Teisto",
     music_src: music8,
+    duration: 342.7,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iste, aliquam magnam voluptatem cumque ratione eum eos impedit dolore minus?",
   },
@@ -127,6 +135,7 @@ export const musics = [
     musicName: "Techno",
     artist: "Teisto",
     music_src: music9,
+    duration: 154.27,
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, iure maxime autem dolorem quia perferendis. Tempora natus laboriosam iusto a.",
   },
@@ -137,6 +146,7 @@ export const musics = [
     musicName: "Fairytale",
     artist: "Alexander Reybak ",
     music_src: music3,
+    duration: 182.7,
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum dolores, animi numquam fugiat, corporis ratione inventore sed consequatur, labore perspiciatis voluptatum dolorum earum.",
   },
@@ -144,9 +154,10 @@ export const musics = [
     id: 11,
     image: Tiesto,
     tag: "ELEC",
-    musicName: "Techno",
+    musicName: "Electronic",
     artist: "Teisto",
     music_src: music11,
+    duration: 464.1,
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam sunt soluta assumenda, exercitationem ipsa quam inventore sed nisi laborum saepe!",
   },
@@ -157,6 +168,7 @@ export const musics = [
     musicName: "Another Love",
     artist: "Tom odell",
     music_src: music5,
+    duration: 241.57,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aperiam repudiandae rem dolore dignissimos inventore iure magnam deleniti culpa nemo?",
   },

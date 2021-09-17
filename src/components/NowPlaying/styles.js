@@ -25,6 +25,10 @@ export const StNowPlayingHeader = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  & a {
+    display: flex;
+    align-items: center;
+  }
   & svg {
     cursor: pointer;
   }
