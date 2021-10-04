@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { useHistory, useParams } from "react-router-dom";
@@ -14,13 +14,17 @@ import {
   StAlbumHeader,
 } from "./styles";
 
-const Album = () => {
+const Album = React.memo(() => {
   const { id } = useParams();
   const History = useHistory();
   const currentSinger = musics?.filter((music) => music.id === parseInt(id))[0];
   const selectedSigner = musics?.filter(
     (music) => music.artist === currentSinger.artist
   );
+
+  const followers = useMemo(() => {
+    return Math.floor(Math.random() * 100) + "k";
+  }, []);
   return (
     <Layout>
       <StAlbumContainer>
@@ -40,7 +44,7 @@ const Album = () => {
               </span>
               <HiOutlineDotsVertical />
               <span>
-                200k
+                {followers}
                 <p>Followers </p>
               </span>
             </StAlbumArtistInfoFollowPart>
@@ -54,6 +58,6 @@ const Album = () => {
       </StAlbumContainer>
     </Layout>
   );
-};
+});
 
 export default Album;
