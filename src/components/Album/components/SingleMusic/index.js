@@ -14,11 +14,11 @@ import {
   StAlbumMusicPlay,
 } from "./styles";
 
-const SingleMusic = (props) => {
+const SingleMusic = React.memo((props) => {
+  const { musicName, id, artist, index, duration } = props;
   const currentMusic = useSelector(selectros.getMusic);
   const [isMusicEditOpen, setIsMusicEditOpen] = useState(false);
   const dispatch = useDispatch();
-  const { musicName, id, artist, index, duration } = props;
   const timeCalcolator = (time) => {
     const min = Math.floor(time / 60);
     const sec = Math.floor((time / 60 - min) * 60);
@@ -69,6 +69,6 @@ const SingleMusic = (props) => {
       <HiDotsHorizontal onClick={() => setIsMusicEditOpen(!isMusicEditOpen)} />
     </StAlbumArtistMusic>
   );
-};
+});
 
 export default SingleMusic;
