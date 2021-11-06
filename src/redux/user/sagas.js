@@ -1,16 +1,12 @@
-import { takeEvery, call, put } from "redux-saga/effects";
+import {takeEvery, call, put} from "redux-saga/effects";
 import getUserInfo from "./fetchUser";
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 function* getUser() {
   yield delay(3000);
-  try {
-    const user = yield call(getUserInfo);
-    yield put({ type: "SET_USER_ASYNC", payload: user });
-  } catch (err) {
-    yield put({ type: "SET_USER_FAILED_ASYNC", payload: err.massage });
-  }
+  const user = yield call(getUserInfo);
+  yield put({type: "SET_USER_ASYNC", payload: user});
 }
 
 function* watchSaga() {
