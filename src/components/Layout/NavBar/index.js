@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router";
+import React, {useEffect, useRef, useState} from "react";
+import {useLocation} from "react-router";
 
-import { IoHeartSharp } from "react-icons/io5";
-import { AiTwotoneSound } from "react-icons/ai";
-import { HiOutlineDotsHorizontal, HiOutlineDotsVertical } from "react-icons/hi";
+import {IoHeartSharp} from "react-icons/io5";
+import {AiTwotoneSound} from "react-icons/ai";
+import {HiOutlineDotsHorizontal, HiOutlineDotsVertical} from "react-icons/hi";
 
 import spotify1 from "../../../assets/Logos/spotify2.png";
 import spotify2 from "../../../assets/Logos/spotify.png";
 
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {
   StNavBarContainer,
   StNavBarLinks,
@@ -17,11 +17,11 @@ import {
   StNavBarSingleLink,
   StNavBarSoundOptions,
 } from "./styles";
-import { NAVLINKS } from "../../../data/data";
-import { useSelector } from "react-redux";
+import {NAVLINKS} from "../../../data/data";
+import {useSelector} from "react-redux";
 import selectros from "../../../redux/playing/selectors";
-import { useDispatch } from "react-redux";
-import { setVolume } from "../../../redux/playing/productActions";
+import {useDispatch} from "react-redux";
+import {setVolume} from "../../../redux/playing/productActions";
 
 const NavBar = () => {
   const location = useLocation();
@@ -60,7 +60,7 @@ const NavBar = () => {
             <img src={spotify2} alt="Sporify" />
           )}
         </Link>
-        {NAVLINKS.map(({ icon, title, linkSrc }, index) => (
+        {NAVLINKS.map(({icon, title, linkSrc}, index) => (
           <Link key={index} to={linkSrc}>
             <StNavBarSingleLink isSameLink={location.pathname === linkSrc}>
               {icon} {isSize ? null : title}
@@ -69,7 +69,7 @@ const NavBar = () => {
         ))}
       </StNavBarLinks>
       <StNavBarSoundOptions>
-        <Link to={`/nowplaying/${currentMusic?.id}`}>
+        <Link to={currentMusic.id ? `/nowplaying/${currentMusic?.id}` : `/`}>
           <StNavBarMusicSignerImage>
             <img src={currentMusic?.image} alt="artist" />
             <StNavBarMusicSignerImagePlay isPlaying={currentMusic?.isPlaying}>

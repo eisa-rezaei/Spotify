@@ -101,7 +101,7 @@ export const StAlbumArtistInfoFollowPart = styled.div`
   }
 `;
 
-export const StAlbumArtistMusicsContainer = styled.ul`
+export const StAlbumArtistMusicsContainer = styled.div`
   width: 100%;
   height: auto;
   padding: 0 20px;
