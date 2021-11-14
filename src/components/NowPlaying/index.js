@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
-import { RiArrowLeftSLine, RiPlayMiniFill } from "react-icons/ri";
-import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
-import { SiApplemusic } from "react-icons/si";
-import { TiArrowRepeat, TiArrowShuffle, TiMediaPause } from "react-icons/ti";
+import React, {useState, useEffect} from "react";
+import {Link, useHistory, useParams} from "react-router-dom";
+import {RiArrowLeftSLine, RiPlayMiniFill} from "react-icons/ri";
+import {MdSkipNext, MdSkipPrevious} from "react-icons/md";
+import {SiApplemusic} from "react-icons/si";
+import {TiArrowRepeat, TiArrowShuffle, TiMediaPause} from "react-icons/ti";
 
 import Layout from "../Layout";
 import {
@@ -15,13 +15,13 @@ import {
   StNowPlayingSigner,
   StNowPlayingSignerInfo,
 } from "./styles";
-import { musics } from "../../data/data";
-import { useDispatch, useSelector } from "react-redux";
-import { setIsPlaying, setMusic } from "../../redux/playing/productActions";
+import {musics} from "../../data/data";
+import {useDispatch, useSelector} from "react-redux";
+import {setIsPlaying, setMusic} from "../../redux/playing/productActions";
 import selectros from "../../redux/playing/selectors";
 
 const NowPlaying = () => {
-  const { id } = useParams();
+  const {id} = useParams();
   const [currentMusicId, setCurrentMusicId] = useState(parseInt(id));
   const currentMusic = useSelector(selectros.getMusic);
   const dispatch = useDispatch();
@@ -80,23 +80,21 @@ const NowPlaying = () => {
             <span>
               <TiArrowShuffle />
             </span>
-            <MdSkipPrevious
-              onClick={() => {
-                setCurrentMusicId(
-                  currentMusicId <= 1 ? musics.length : currentMusicId - 1
-                );
-              }}
-            />
+            <Link to={currentMusicId <= 1 ? musics.length : currentMusicId - 1}>
+              <MdSkipPrevious />
+            </Link>
             <button onClick={togglePlayMusic}>
               {isPlaying ? <TiMediaPause /> : <RiPlayMiniFill />}
             </button>
-            <MdSkipNext
-              onClick={() => {
-                setCurrentMusicId(
-                  currentMusicId >= musics?.length - 1 ? 0 : currentMusicId + 1
-                );
-              }}
-            />
+            <Link
+              to={
+                currentMusicId >= musics?.length - 1
+                  ? `/nowplaying/1`
+                  : `/nowplaying/${currentMusicId + 1}`
+              }
+            >
+              <MdSkipNext />
+            </Link>
             <span>
               <TiArrowRepeat />
             </span>
