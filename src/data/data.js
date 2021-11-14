@@ -49,7 +49,7 @@ export const musics = [
     music_src: music1,
     duration: 227.1,
     description:
-      "Stop waiting for exceptional things to just happen.He found a leprechaun in his walnut shell.There can never be too many cherries on an ice cream sundae.They improved dramatically once the lead singer left.Honestly, I didn't care much for the first season, so I didn't bother with the second.Best friends are like old tomatoes and shoelaces.Despite what your teacher may have told you, there is a wrong way to wield a lasso.He had accidentally hacked into his company's server",
+      "Stop waiting for exceptional thing to just happen.He found a leprechaun in his walnut shell.There can never be too many cherries on an ice cream sundae.They improved dramatically once the lead singer left.Honestly, I didn't care much for the first season, so I didn't bother with the second.Best friends are like old tomatoes and shoelaces.Despite what your teacher may have told you, there is a wrong way to wield a lasso.He had accidentally hacked into his company's server",
   },
   {
     id: 2,
