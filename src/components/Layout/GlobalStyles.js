@@ -13,6 +13,7 @@ body{
     font-family: "Changa", sans-serif;
     background-color: #60c968;
     line-height: 1.5;
+    user-select: none;
 }
 a {
     text-decoration: none;
@@ -20,7 +21,9 @@ a {
 }
 
 button{
+    color: inherit;
     background-color: inherit;
+    font-family: "Changa", sans-serif;
 }
 li {
     list-style: none;

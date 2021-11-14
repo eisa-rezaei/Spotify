@@ -1,8 +1,8 @@
-import React, { useMemo } from "react";
-import { HiOutlineDotsVertical } from "react-icons/hi";
-import { RiArrowLeftSLine } from "react-icons/ri";
-import { useHistory, useParams } from "react-router-dom";
-import { musics } from "../../data/data";
+import React, {useMemo, useState} from "react";
+import {HiOutlineDotsVertical} from "react-icons/hi";
+import {RiArrowLeftSLine} from "react-icons/ri";
+import {useHistory, useParams} from "react-router-dom";
+import {musics} from "../../data/data";
 import Layout from "../Layout";
 import SingleMusic from "./components/SingleMusic";
 import {
@@ -15,7 +15,8 @@ import {
 } from "./styles";
 
 const Album = React.memo(() => {
-  const { id } = useParams();
+  const [isFollowed, setIsFollowed] = useState(true);
+  const {id} = useParams();
   const History = useHistory();
   const currentSinger = musics?.filter((music) => music.id === parseInt(id))[0];
   const selectedSigner = musics?.filter(
@@ -28,10 +29,12 @@ const Album = React.memo(() => {
   return (
     <Layout>
       <StAlbumContainer>
-        <StAlbumHeader>
+        <StAlbumHeader isFollowed={isFollowed}>
           <RiArrowLeftSLine onClick={History.goBack} />
           NowPlaying
-          <span>Followed</span>
+          <button type="button" onClick={() => setIsFollowed(!isFollowed)}>
+            {isFollowed ? `Followed` : "Follow"}
+          </button>
         </StAlbumHeader>
         <StAlbumArtist>
           <img src={currentSinger.image} alt={currentSinger.artist} />
