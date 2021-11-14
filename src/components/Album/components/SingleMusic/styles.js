@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 const heightChanger = keyframes`
 0% { height : 10px; }
@@ -8,13 +8,12 @@ const heightChanger = keyframes`
 100% {height : 10px}
 `;
 
-export const StAlbumArtistMusic = styled.li`
+export const StAlbumArtistMusic = styled.section`
   width: 100%;
   height: 100px;
   padding: 0 10px;
   position: relative;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid #333;

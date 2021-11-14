@@ -5,16 +5,64 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta name="description" content="This website is Created by Eisa Rezaei" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="maskable" href="%PUBLIC_URL%/maskable_icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Changa:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <title>Spotify</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+          border-top: 3px solid #60c968;
+        }
+        100% {
+          transform: rotate(360deg);
+          border-top: 3px solid #60c968;
+        }
+      }
+      .pre-content {
+        min-width: 100vw;
+        min-height: 100vh;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        font-family: "Changa", sans-serif;
+      }
+      .pre-content span {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        border: 2px solid #bbccbb;
+        border-top: 3px solid #4e4cd5;
+        animation: rotation infinite 1.5s ease;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div class="pre-content">
+        <span></span>
+        <h1>Loading ...</h1>
+        <p>Spotify Music Platform</p>
+      </div>
+    </div>
   </body>
 </html>

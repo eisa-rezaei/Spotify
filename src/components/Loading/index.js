@@ -1,12 +1,12 @@
 import React from "react";
-import { StLoadingContainer, StLoadingLayoutContainer } from "./styles";
+import {StLoadingLayoutContainer} from "./styles";
 
 const Loading = () => {
   return (
     <StLoadingLayoutContainer>
-      <StLoadingContainer>
-        <span />
-      </StLoadingContainer>
+      <span />
+      <h1>Loading ...</h1>
+      <p>Spotify Music Platform</p>
     </StLoadingLayoutContainer>
   );
 };
