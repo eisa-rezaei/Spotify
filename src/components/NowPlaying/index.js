@@ -80,21 +80,24 @@ const NowPlaying = () => {
             <span>
               <TiArrowShuffle />
             </span>
-            <Link to={currentMusicId <= 1 ? musics.length : currentMusicId - 1}>
-              <MdSkipPrevious />
-            </Link>
+            <MdSkipPrevious
+              onClick={() => {
+                setCurrentMusicId(
+                  currentMusicId <= 1 ? musics.length : currentMusicId - 1
+                );
+              }}
+            />
             <button onClick={togglePlayMusic}>
               {isPlaying ? <TiMediaPause /> : <RiPlayMiniFill />}
             </button>
-            <Link
-              to={
-                currentMusicId >= musics?.length - 1
-                  ? `/nowplaying/1`
-                  : `/nowplaying/${currentMusicId + 1}`
-              }
-            >
-              <MdSkipNext />
-            </Link>
+            <MdSkipNext
+              onClick={() => {
+                setCurrentMusicId(
+                  currentMusicId >= musics?.length - 1 ? 0 : currentMusicId + 1
+                );
+              }}
+            />
+
             <span>
               <TiArrowRepeat />
             </span>
