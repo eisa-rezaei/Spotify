@@ -1,17 +1,17 @@
-import musicImage1 from "./../assets/music-pic/1.png";
-import musicImage2 from "./../assets/music-pic/2.png";
-import musicImage3 from "./../assets/music-pic/3.jpeg";
-import musicImage4 from "./../assets/music-pic/4.png";
-import musicImage6 from "./../assets/music-pic/6.jpeg";
-import musicImage7 from "./../assets/music-pic/7.png";
+import musicImage1 from "./../assets/music-pic/1.webp";
+import musicImage2 from "./../assets/music-pic/2.webp";
+import musicImage3 from "./../assets/music-pic/3.webp";
+import musicImage4 from "./../assets/music-pic/4.webp";
+import musicImage6 from "./../assets/music-pic/6.webp";
+import musicImage7 from "./../assets/music-pic/7.webp";
 
-import recent_artist4 from "./../assets/recent-artists/1.jpeg";
-import recent_artist5 from "./../assets/recent-artists/2.jpeg";
-import recent_artist3 from "./../assets/recent-artists/3.jpg";
-import recent_artist6 from "./../assets/recent-artists/4.jpg";
-import recent_artist2 from "./../assets/recent-artists/5.jpeg";
-import recent_artist1 from "./../assets/recent-artists/6.jpeg";
-import Tiesto from "./../assets/recent-artists/artist-icon.png";
+import recent_artist4 from "./../assets/recent-artists/1.webp";
+import recent_artist5 from "./../assets/recent-artists/2.webp";
+import recent_artist3 from "./../assets/recent-artists/3.webp";
+import recent_artist6 from "./../assets/recent-artists/4.webp";
+import recent_artist2 from "./../assets/recent-artists/5.webp";
+import recent_artist1 from "./../assets/recent-artists/6.webp";
+import Tiesto from "./../assets/recent-artists/artist-icon.webp";
 
 import music1 from "./../musics/Adele_1.mp3";
 import music2 from "./../musics/Adele_2.mp3";
@@ -26,17 +26,17 @@ import music9 from "./../musics/Teisto_2.mp3";
 import music10 from "./../musics/tiesto_1.mp3";
 import music11 from "./../musics/Tiesto-Escape.mp3";
 import music12 from "./../musics/Tiesto-IWillBeHere.mp3";
-import { FaHome, FaMicrophoneAlt } from "react-icons/fa";
-import { IoIosCompass } from "react-icons/io";
-import { SiOpenstreetmap } from "react-icons/si";
-import { IoTime } from "react-icons/io5";
+import {FaHome, FaMicrophoneAlt} from "react-icons/fa";
+import {IoIosCompass} from "react-icons/io";
+import {SiOpenstreetmap} from "react-icons/si";
+import {IoTime} from "react-icons/io5";
 
 export const NAVLINKS = [
-  { icon: <FaHome />, title: "Home", linkSrc: "/" },
-  { icon: <IoIosCompass />, title: "Explore", linkSrc: "/explore" },
-  { icon: <SiOpenstreetmap />, title: "IGTV", linkSrc: "/igtv" },
-  { icon: <FaMicrophoneAlt />, title: "Microphone", linkSrc: "/microphone" },
-  { icon: <IoTime />, title: "Time", linkSrc: "/time" },
+  {icon: <FaHome />, title: "Home", linkSrc: "/"},
+  {icon: <IoIosCompass />, title: "Explore", linkSrc: "/explore"},
+  {icon: <SiOpenstreetmap />, title: "IGTV", linkSrc: "/igtv"},
+  {icon: <FaMicrophoneAlt />, title: "Microphone", linkSrc: "/microphone"},
+  {icon: <IoTime />, title: "Time", linkSrc: "/time"},
 ];
 
 export const musics = [
