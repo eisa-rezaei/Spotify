@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import SwiperCore, { Autoplay } from "swiper";
+import React, {useEffect, useState} from "react";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {useDispatch, useSelector} from "react-redux";
+import {Link} from "react-router-dom";
+import SwiperCore, {Autoplay} from "swiper";
 
-import { RiCheckboxBlankCircleLine, RiPlayMiniFill } from "react-icons/ri";
-import { FaLink, FaReact, FaSpotify, FaStar } from "react-icons/fa";
-import { TiMediaPause } from "react-icons/ti";
+import {RiCheckboxBlankCircleLine, RiPlayMiniFill} from "react-icons/ri";
+import {FaLink, FaReact, FaSpotify, FaStar} from "react-icons/fa";
+import {TiMediaPause} from "react-icons/ti";
 
-import { GENRES, musics, recent_artists } from "../../data/data";
+import {GENRES, musics, recent_artists} from "../../data/data";
 import user_image from "./../../assets/user-image/avatar10.png";
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import selectros from "../../redux/playing/selectors";
 import userSelector from "../../redux/user/selectors";
-import { setIsPlaying, setMusic } from "../../redux/playing/productActions";
+import {setIsPlaying, setMusic} from "../../redux/playing/productActions";
 import Layout from "../Layout";
 import Gener from "./components/Gener";
 import {
@@ -60,7 +60,7 @@ const Home = () => {
           </StHomeSearch>
           <span
             onClick={() => {
-              dispatch({ type: "SET_USER" });
+              dispatch({type: "SET_USER"});
               setIsUserInfoCOpenard(!isUserInfoCardOpen);
             }}
           >
@@ -94,7 +94,7 @@ const Home = () => {
             loop
             spaceBetween={20}
             onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
-            autoplay={{ delay: 2000 }}
+            autoplay={{delay: 2000}}
           >
             {musics.map((music, index) => (
               <SwiperSlide key={music.id}>
@@ -103,7 +103,7 @@ const Home = () => {
                     <StHomeSwiperSlideTag>{music.tag}</StHomeSwiperSlideTag>
                   ) : null}
                   <Link to={`/nowplaying/${music.id}`}>
-                    <img src={music.image} alt={music.name} />
+                    <img src={music.image} alt={music.musicName} />
                   </Link>
                   <StHomePlaySound isActive={activeSlide === index}>
                     <span
@@ -141,7 +141,7 @@ const Home = () => {
         </StHomeGenres>
         <h5>Recent Artist</h5>
         <StHomeRecentArtists>
-          {recent_artists.map(({ image }, index) => (
+          {recent_artists.map(({image}, index) => (
             <Link key={index} to="/demo">
               <img src={image} alt="artist" />
             </Link>
