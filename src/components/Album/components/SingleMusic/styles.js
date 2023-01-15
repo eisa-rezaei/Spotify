@@ -41,16 +41,17 @@ export const StAlbumArtistMusic = styled.section`
   }
 `;
 export const StAlbumArtistMusicCurrentProgress = styled.div`
-  width: ${(props) => props?.currentTime}%;
+  width: ${(props) => props?.currentTime ?? 0}%;
   height: 100%;
   top: 0;
   left: 0;
   opacity: 0.2;
   z-index: 2;
   position: absolute;
-  transition: all 1s linear;
+  transition: all 2s linear ;
   border-radius: 00px 5px 5px 0;
   background: rgb(255, 255, 255);
+  border-right: 1px solid wheat;
   background: linear-gradient(
     -90deg,
     rgba(255, 255, 255, 1) 30%,

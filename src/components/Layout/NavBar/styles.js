@@ -101,6 +101,9 @@ export const StNavBarSoundOptions = styled.div`
       max-height: 0;
       visibility: hidden;
     }
+    ::-ms-track {
+      background-color: #e0e0e0;
+    }
   }
 
   & svg {

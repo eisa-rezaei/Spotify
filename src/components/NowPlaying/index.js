@@ -28,6 +28,7 @@ const NowPlaying = () => {
   const History = useHistory();
 
   useEffect(() => {
+    console.log(currentMusicId);
     const selectedMusic = musics.filter((music) => music.id === currentMusicId);
     dispatch(setMusic(selectedMusic[0]));
     dispatch(setIsPlaying(true));
@@ -57,6 +58,7 @@ const NowPlaying = () => {
       return `${min}:${sec}`;
     }
   };
+
   return (
     <Layout>
       <StNowPlayingContainer>
@@ -83,7 +85,7 @@ const NowPlaying = () => {
             <MdSkipPrevious
               onClick={() => {
                 setCurrentMusicId(
-                  currentMusicId <= 1 ? musics.length : currentMusicId - 1
+                  currentMusicId === 1 ? musics.length : currentMusicId - 1
                 );
               }}
             />
@@ -93,7 +95,7 @@ const NowPlaying = () => {
             <MdSkipNext
               onClick={() => {
                 setCurrentMusicId(
-                  currentMusicId >= musics?.length - 1 ? 0 : currentMusicId + 1
+                  currentMusicId === musics?.length - 1 ? 1 : currentMusicId + 1
                 );
               }}
             />
@@ -103,13 +105,12 @@ const NowPlaying = () => {
             </span>
           </StNowPlayingMusic>
           <StNowPlayingMusicProgressBar>
-            <p>{timeCalcolator(currentMusic?.currentTime)}</p>
+            <p>{timeCalcolator(currentMusic?.currentTime ?? 0)}</p>
             <input
               type="range"
-              value={`${currentMusic?.currentTime}`}
+              value={currentMusic?.currentTime ?? 0}
               min="0"
               max={`${currentMusic?.duration}`}
-              readOnly
             />
             <p>{timeCalcolator(currentMusic?.duration)}</p>
           </StNowPlayingMusicProgressBar>
