@@ -66,12 +66,13 @@ export const StNowPlayingSigner = styled.article`
 `;
 export const StNowPlayingSignerInfo = styled.div`
   width: 60%;
-  height: 50vh;
+  height: 100%;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow-y: auto;
   & h5 {
     color: #a0a0a0;
   }

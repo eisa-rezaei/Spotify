@@ -20,18 +20,19 @@ export const StAlbumHeader = styled.header`
   height: 10vh;
   padding: 0 20px;
   color: #fff;
-  border-bottom: 2px solid #333;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid #333;
   & svg {
     cursor: pointer;
   }
-  & span {
+  & button {
+    min-width: 100px;
     padding: 5px;
+    cursor: pointer;
     border-radius: 5px;
-    background-color: #7670f6;
+    background-color: ${(props) => (props.isFollowed ? `#7670f6` : `#60c968`)};
   }
   @media (max-width: 700px) {
     padding: 0 10px;
@@ -101,7 +102,7 @@ export const StAlbumArtistInfoFollowPart = styled.div`
   }
 `;
 
-export const StAlbumArtistMusicsContainer = styled.ul`
+export const StAlbumArtistMusicsContainer = styled.div`
   width: 100%;
   height: auto;
   padding: 0 20px;
