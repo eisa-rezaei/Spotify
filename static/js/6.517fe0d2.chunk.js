@@ -1,0 +1,2 @@
+(this.webpackJsonpspotify=this.webpackJsonpspotify||[]).push([[6],{140:function(n,t,e){"use strict";e.r(t);e(1);var i,a=e(25),s=e(4),o=e(5).b.section(i||(i=Object(s.a)(["\n  width: 100vw;\n  height: auto;\n  color: #fff;\n  font-size: 3vw;\n  text-align: center;\n  margin-left: 25%;\n  @media (max-width: 700px) {\n    margin-left: 20%;\n  }\n"]))),c=e(2);t.default=function(){return Object(c.jsx)(a.a,{children:Object(c.jsx)(o,{children:"Some thing wrong with URL, please use navigation! -_-"})})}}}]);
+//# sourceMappingURL=6.517fe0d2.chunk.js.map
